@@ -16,7 +16,7 @@ Special indices:    12: [
                     15: unrecognized
 ==========================================================*/
 
-module kbd(ar, clk, ps2_clk, ps2_dat, bitmask,  operand, code_rdy, psclk, psdat);
+module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, psclk, psdat);
 	input	ar;
 	input	clk;
 	input  ps2_clk;
@@ -50,17 +50,15 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask,  operand, code_rdy, psclk, psdat)
                 ps2_clk_filt <= 1'b0; // Set filtered value low
         end
     
-    
-	reg [3:0]	bit_count;
-	reg			currently_receiving;
-    reg         received_stop;
-	reg [3:0]  bitindex;
+	reg [3:0]	   bit_count;
+	reg			       currently_receiving;
+  reg          received_stop;
+	reg [3:0]    bitindex;
 
 	always @(negedge ar or posedge ps2_clk_filt)
 		if(~ar) begin
             // Initialize values to zero
             bit_count <= 0;
-            code_rdy <= 1'b0;
             code <= 7'h00;
             currently_receiving <= 1'b0;
             bitmask <= 0;
@@ -69,7 +67,6 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask,  operand, code_rdy, psclk, psdat)
             if(~currently_receiving && ps2_dat == 1'b0) begin
                 currently_receiving <= 1'b1;
                 bit_count <= 0;
-                code_rdy <= 1'b0;
             end else begin
                 // Always increment bit count when triggered and receiving
                 if(currently_receiving) begin
@@ -92,8 +89,7 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask,  operand, code_rdy, psclk, psdat)
                             // so we should mark a bit high
                             bitmask[bitindex] <= 1;
                         end
-
-                        code_rdy <= 1'b1;
+                        
                         currently_receiving <= 1'b0;
                     end
                 end
