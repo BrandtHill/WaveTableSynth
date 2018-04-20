@@ -16,12 +16,15 @@ Special indices:    12: [
                     15: unrecognized
 ==========================================================*/
 
-module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, psclk, psdat);
+module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psdat);
 	input	ar;
 	input	clk;
 	input  ps2_clk;
 	input	ps2_dat;
 	output reg [19:0] bitmask;
+	output reg [3:0] keyval;
+	output reg keyOn;
+	output reg [1:0] select;
 	output psclk, psdat;
 	
     // For debugging timing waveforms
@@ -30,8 +33,7 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, psclk, psdat);
 	
 	
 	reg [7:0] code;
-	
-    // We need to filter the ps2 clock for edges
+  // We need to filter the ps2 clock for edges
 	reg	ps2_clk_filt;
 	reg [7:0] filter_sr;
 	
@@ -88,6 +90,9 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, psclk, psdat);
                             // Last character received was not a stop code
                             // so we should mark a bit high
                             bitmask[bitindex] <= 1;
+                            // Output the currently held key
+                            keyval <= bitindex;
+                            keyOn <= 1;
                         end
                         
                         currently_receiving <= 1'b0;
@@ -97,26 +102,61 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, psclk, psdat);
         end
 			
 							
-	// This always block implements the lookup table that converts
-    // scan codes into bit positions for the output vector
+	// This always block defines the lookup table that converts
+  // scan codes into bit positions for the output vector
 	always@(code)
 		case(code)
-			8'h1C: bitindex = 0;    // A (C)
-			8'h1D: bitindex = 1;    // W (C#/Db)
-			8'h1B: bitindex = 2;    // S (D)
-			8'h24: bitindex = 3;    // E (D#/Eb)
-			8'h23: bitindex = 4;    // D (E)
-			8'h2B: bitindex = 5;    // F (F)
-			8'h2C: bitindex = 6;    // T (F#)
-			8'h34: bitindex = 7;    // G (G)
-			8'h35: bitindex = 8;    // Y (G#/Ab)
-			8'h33: bitindex = 9;    // H (A)
-			8'h3C: bitindex = 10;   // U (A#)
-			8'h3B: bitindex = 11;   // J (B)
-			8'h54: bitindex = 12;   // [
-			8'h5B: bitindex = 13;   // ]
-			8'h5D: bitindex = 14;   // \
-			default: bitindex = 15; // Unrecognized character
-		endcase		
+			8'h1A: bitindex = 0;   //Z
+			8'h1B: bitindex = 1;   //S
+			8'h22: bitindex = 2;   //X
+			8'h21: bitindex = 3;   //C
+			8'h2B: bitindex = 4;   //F
+			8'h2A: bitindex = 5;   //V
+			8'h34: bitindex = 6;   //G
+			8'h32: bitindex = 7;   //B
+			8'h31: bitindex = 8;   //N
+			8'h3B: bitindex = 9;   //J
+			8'h3A: bitindex = 10;  //M
+			8'h42: bitindex = 11;  //K
+			8'h41: bitindex = 12;  //<
+			8'h4E: bitindex = 13;  //+
+			8'h79: bitindex = 14;  //-
+			default: bitindex = 15;//
+		endcase
+	
+	wire pianoKeys;
+	assign pianoKeys = bitmask[11:0];
+	
+	always @(negedge ar or posedge clk)
+	if(~ar) begin
+      // Initialize values to zero
+      keyOn <= 0;
+	end else begin
+		if(~(&pianoKeys)) begin
+		  keyOn <= 0;  
+		end
+  end
+  
+  //Process +/- keys
+  reg plus_prev, minus_prev;
+  wire plus_rising, minus_rising;
+  assign plus_rising = (plus_prev==0)&&(bitmask[13]==1);
+  assign minus_rising = (minus_prev==0)&&(bitmask[14]==1);
+  
+  always @(negedge ar or posedge clk)
+	if(~ar) begin
+      // Initialize values to zero
+      select <= 0;
+      plus_prev <= 0;
+      minus_prev <= 0;
+	end else begin
+		if(plus_rising)
+		  select <= select + 1;
+		if(minus_rising)
+		  select <= select - 1;
+		
+		plus_prev <= bitmask[13];
+		minus_prev <= bitmask[14];
+  end
 	endmodule
 	
