@@ -91,8 +91,11 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
                             // so we should mark a bit high
                             bitmask[bitindex] <= 1;
                             // Output the currently held key
-                            keyval <= bitindex;
-                            keyOn <= 1;
+                            if(bitindex<=12)
+                              begin
+                                keyval <= bitindex;
+                                keyOn <= 1;
+                              end
                         end
                         
                         currently_receiving <= 1'b0;
@@ -124,8 +127,8 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
 			default: bitindex = 15;//
 		endcase
 	
-	wire pianoKeys;
-	assign pianoKeys = bitmask[11:0];
+	wire [12:0] pianoKeys;
+	assign pianoKeys = bitmask[12:0];
 	
 	always @(negedge ar or posedge clk)
 	if(~ar) begin
