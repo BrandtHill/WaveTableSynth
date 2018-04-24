@@ -21,9 +21,9 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
 	input	clk;
 	input  ps2_clk;
 	input	ps2_dat;
-	output reg [19:0] bitmask;
+	output reg [15:0] bitmask;
 	output reg [3:0] keyval;
-	output reg keyOn;
+	output keyOn;
 	output reg [1:0] select;
 	output psclk, psdat;
 	
@@ -41,20 +41,20 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
         if(~ar) begin
             // Initialize to all zeros
             ps2_clk_filt <= 1'b0;
-            filter_sr <= 8'b0;
+            filter_sr <= 8'hff;
         end else begin
             // Shift filter_sr towards LSB (right shift) and insert ps2_clk as bit MSB
             filter_sr <= {ps2_clk, filter_sr[7:1]};
             
             if(filter_sr == 8'hff) // If ps2_clk has been high for 8 cycles
-                ps2_clk_filt <= 1'b1; // Set filtered value high
+                ps2_clk_filt <= 1'b0; // Set filtered value high
             else if(filter_sr == 8'h00) // If ps2_clk has been low for 8 cycles
-                ps2_clk_filt <= 1'b0; // Set filtered value low
+                ps2_clk_filt <= 1'b1; // Set filtered value low
         end
     
 	reg [3:0]	   bit_count;
 	reg			       currently_receiving;
-  reg          received_stop;
+	reg          received_stop;
 	reg [3:0]    bitindex;
 
 	always @(negedge ar or posedge ps2_clk_filt)
@@ -74,7 +74,7 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
                 if(currently_receiving) begin
                     bit_count <= bit_count + 1'b1;
 
-                    if(bit_count <= 4'd8)
+                    if(bit_count <= 4'd7)
                         code <= {ps2_dat, code[7:1]}; // Shift in the latest ps2 data bit_count
                     else begin
                         // We've received 8 bits!
@@ -94,7 +94,6 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
                             if(bitindex<=12)
                               begin
                                 keyval <= bitindex;
-                                keyOn <= 1;
                               end
                         end
                         
@@ -122,23 +121,15 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
 			8'h3A: bitindex = 10;  //M
 			8'h42: bitindex = 11;  //K
 			8'h41: bitindex = 12;  //<
-			8'h4E: bitindex = 13;  //+
-			8'h79: bitindex = 14;  //-
+			8'h55: bitindex = 13;  //+
+			8'h4E: bitindex = 14;  //-
 			default: bitindex = 15;//
 		endcase
 	
 	wire [12:0] pianoKeys;
+	wire keyOn;
 	assign pianoKeys = bitmask[12:0];
-	
-	always @(negedge ar or posedge clk)
-	if(~ar) begin
-      // Initialize values to zero
-      keyOn <= 0;
-	end else begin
-		if(~(&pianoKeys)) begin
-		  keyOn <= 0;  
-		end
-  end
+	assign keyOn = &pianoKeys;
   
   //Process +/- keys
   reg plus_prev, minus_prev;
