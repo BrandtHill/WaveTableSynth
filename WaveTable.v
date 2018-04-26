@@ -19,10 +19,25 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut);
 	wire [14:0] address; 		//15 bit address.
 	wire Done; 						//Basically never used. Feeds into dpram_ctrl
 										
-										//Lookup table of scale values
-	//wire [7:0] scaleTable [12:0]=
-	parameter bit [7:0][12:0]scaleTable=
-	//integer scaleTable [12:0]=
+	//Lookup table for scale values
+	//These values are rounded to nearest int.								
+	wire [7:0] scaleTable [12:0]:
+		assign scaleTable[0] = 8'd74;	//A  0
+		assign scaleTable[1] = 8'd78;	//A# 1
+		assign scaleTable[2] = 8'd83;	//B  2
+		assign scaleTable[3] = 8'd88;	//C  3
+		assign scaleTable[4] = 8'd93;	//C# 4
+		assign scaleTable[5] = 8'd99;	//D  5
+		assign scaleTable[6] = 8'd104;	//D# 6
+		assign scaleTable[7] = 8'd111;	//E  7
+		assign scaleTable[8] = 8'd117;	//F  8
+		assign scaleTable[9] = 8'd124;	//F# 9
+		assign scaleTable[10] = 8'd132;	//G  10
+		assign scaleTable[11] = 8'd139;	//G# 11
+		assign scaleTable[12] = 8'd148; //G# 11
+										
+										
+	/*parameter bit [7:0][12:0]scaleTable=
 	{	
 		//These values are rounded to nearest int.
 		8'd74, //A  0
@@ -38,10 +53,7 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut);
 		8'd132,//G  10
 		8'd139,//G# 11
 		8'd148, //A  12
-		8'd0,
-		8'd0,
-		8'd0
-	};
+	};*/
 	
 	//2 bit wave select then 13 bit position of wave sample
 	assign address = {waveSelect, wavePosition};
