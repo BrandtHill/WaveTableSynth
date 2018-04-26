@@ -37,7 +37,10 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut);
 		8'd124,//F# 9
 		8'd132,//G  10
 		8'd139,//G# 11
-		8'd148 //A  12
+		8'd148, //A  12
+		8'd0,
+		8'd0,
+		8'd0
 	};
 	
 	//2 bit wave select then 13 bit position of wave sample
