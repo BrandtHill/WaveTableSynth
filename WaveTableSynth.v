@@ -19,7 +19,7 @@ module WaveTableSynth(
 	input  ps2_clk,
 	input	ps2_dat,
 	output [15:0] bitmask,
-	output [4:0] keyVal_out
+	output [7:0] debug
 	);         
 
 
@@ -29,7 +29,8 @@ module WaveTableSynth(
 
 	wire keyOn; 					// wire between kb to WT; 1 if key pressed, 0 if key released.
 
-    assign keyVal_out = {|waveSample,keyVal};
+	//debug stuff
+    assign debug = {|waveSample,waveSample[6:0]};
 
 
 

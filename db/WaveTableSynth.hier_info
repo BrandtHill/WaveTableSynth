@@ -1,38 +1,41 @@
 |WaveTableSynth
 clk_50 => clk_50.IN3
 ar => ar.IN3
-SDAT <> adc_proj:comb_8.SDAT
-SCLK <= adc_proj:comb_8.SCLK
-AUD_DACDAT <= adc_proj:comb_8.AUD_DACDAT
+SDAT <> adc_proj:comb_11.SDAT
+SCLK << adc_proj:comb_11.SCLK
+AUD_DACDAT << adc_proj:comb_11.AUD_DACDAT
 AUD_ADCDAT => AUD_ADCDAT.IN1
-AUD_XCK <= adc_proj:comb_8.AUD_XCK
+AUD_XCK << adc_proj:comb_11.AUD_XCK
 AUD_BCLK => AUD_BCLK.IN1
 AUD_DACLRCK => AUD_DACLRCK.IN2
 AUD_ADCLRCK => AUD_ADCLRCK.IN1
 bitcrush => bitcrush.IN1
 ps2_clk => ps2_clk.IN1
 ps2_dat => ps2_dat.IN1
-bitmask[0] <= kbd:keyboard_inst.bitmask
-bitmask[1] <= kbd:keyboard_inst.bitmask
-bitmask[2] <= kbd:keyboard_inst.bitmask
-bitmask[3] <= kbd:keyboard_inst.bitmask
-bitmask[4] <= kbd:keyboard_inst.bitmask
-bitmask[5] <= kbd:keyboard_inst.bitmask
-bitmask[6] <= kbd:keyboard_inst.bitmask
-bitmask[7] <= kbd:keyboard_inst.bitmask
-bitmask[8] <= kbd:keyboard_inst.bitmask
-bitmask[9] <= kbd:keyboard_inst.bitmask
-bitmask[10] <= kbd:keyboard_inst.bitmask
-bitmask[11] <= kbd:keyboard_inst.bitmask
-bitmask[12] <= kbd:keyboard_inst.bitmask
-bitmask[13] <= kbd:keyboard_inst.bitmask
-bitmask[14] <= kbd:keyboard_inst.bitmask
-bitmask[15] <= kbd:keyboard_inst.bitmask
-keyVal_out[0] <= keyVal[0].DB_MAX_OUTPUT_PORT_TYPE
-keyVal_out[1] <= keyVal[1].DB_MAX_OUTPUT_PORT_TYPE
-keyVal_out[2] <= keyVal[2].DB_MAX_OUTPUT_PORT_TYPE
-keyVal_out[3] <= keyVal[3].DB_MAX_OUTPUT_PORT_TYPE
-keyVal_out[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+bitmask[0] << kbd:keyboard_inst.bitmask
+bitmask[1] << kbd:keyboard_inst.bitmask
+bitmask[2] << kbd:keyboard_inst.bitmask
+bitmask[3] << kbd:keyboard_inst.bitmask
+bitmask[4] << kbd:keyboard_inst.bitmask
+bitmask[5] << kbd:keyboard_inst.bitmask
+bitmask[6] << kbd:keyboard_inst.bitmask
+bitmask[7] << kbd:keyboard_inst.bitmask
+bitmask[8] << kbd:keyboard_inst.bitmask
+bitmask[9] << kbd:keyboard_inst.bitmask
+bitmask[10] << kbd:keyboard_inst.bitmask
+bitmask[11] << kbd:keyboard_inst.bitmask
+bitmask[12] << kbd:keyboard_inst.bitmask
+bitmask[13] << kbd:keyboard_inst.bitmask
+bitmask[14] << kbd:keyboard_inst.bitmask
+bitmask[15] << kbd:keyboard_inst.bitmask
+debug[0] << waveSample[0].DB_MAX_OUTPUT_PORT_TYPE
+debug[1] << waveSample[1].DB_MAX_OUTPUT_PORT_TYPE
+debug[2] << waveSample[2].DB_MAX_OUTPUT_PORT_TYPE
+debug[3] << waveSample[3].DB_MAX_OUTPUT_PORT_TYPE
+debug[4] << waveSample[4].DB_MAX_OUTPUT_PORT_TYPE
+debug[5] << waveSample[5].DB_MAX_OUTPUT_PORT_TYPE
+debug[6] << waveSample[6].DB_MAX_OUTPUT_PORT_TYPE
+debug[7] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WaveTableSynth|kbd:keyboard_inst
@@ -241,6 +244,14 @@ dataOut[12] <= dpram_ctrl:inst.Dout
 dataOut[13] <= dpram_ctrl:inst.Dout
 dataOut[14] <= dpram_ctrl:inst.Dout
 dataOut[15] <= dpram_ctrl:inst.Dout
+debug[0] <= scale[0].DB_MAX_OUTPUT_PORT_TYPE
+debug[1] <= scale[1].DB_MAX_OUTPUT_PORT_TYPE
+debug[2] <= scale[2].DB_MAX_OUTPUT_PORT_TYPE
+debug[3] <= scale[3].DB_MAX_OUTPUT_PORT_TYPE
+debug[4] <= scale[4].DB_MAX_OUTPUT_PORT_TYPE
+debug[5] <= scale[5].DB_MAX_OUTPUT_PORT_TYPE
+debug[6] <= scale[6].DB_MAX_OUTPUT_PORT_TYPE
+debug[7] <= scale[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst
@@ -2778,7 +2789,7 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 
 
-|WaveTableSynth|adc_proj:comb_8
+|WaveTableSynth|adc_proj:comb_11
 clk_50 => clk_50.IN1
 ar => ar.IN2
 SDAT <> codec_prgm:inst2.SDAT
@@ -2993,7 +3004,7 @@ bclk <= AUD_BCLK.DB_MAX_OUTPUT_PORT_TYPE
 adclrck <= AUD_ADCLRCK.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|adc_proj:comb_8|data_setup:inst1
+|WaveTableSynth|adc_proj:comb_11|data_setup:inst1
 clk_50 => counter[0].CLK
 clk_50 => counter[1].CLK
 clk_50 => counter[2].CLK
@@ -3058,7 +3069,7 @@ activate <= comb.DB_MAX_OUTPUT_PORT_TYPE
 clk_xck <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|adc_proj:comb_8|codec_prgm:inst2
+|WaveTableSynth|adc_proj:comb_11|codec_prgm:inst2
 ar => ack_enable.ACLR
 ar => sclk_enable.PRESET
 ar => bit_sent.PRESET

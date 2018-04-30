@@ -76,22 +76,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "keyVal_out[0]",
-					"strict" : false
-				},
-				{
-					"name" : "keyVal_out[1]",
-					"strict" : false
-				},
-				{
-					"name" : "keyVal_out[2]",
-					"strict" : false
-				},
-				{
-					"name" : "keyVal_out[3]",
-					"strict" : false
-				},
-				{
 					"name" : "SDAT",
 					"strict" : false
 				},
