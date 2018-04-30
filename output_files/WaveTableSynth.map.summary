@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Apr 30 17:35:29 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : WaveTableSynth
+Top-level Entity Name : WaveTableSynth
+Family : Cyclone IV E
+Total logic elements : 148
+    Total combinational functions : 132
+    Dedicated logic registers : 78
+Total registers : 78
+Total pins : 34
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

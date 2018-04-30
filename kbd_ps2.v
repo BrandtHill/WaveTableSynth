@@ -127,9 +127,8 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
 		endcase
 	
 	wire [12:0] pianoKeys;
-	wire keyOn;
 	assign pianoKeys = bitmask[12:0];
-	assign keyOn = &pianoKeys;
+	assign keyOn = |pianoKeys;
   
   //Process +/- keys
   reg plus_prev, minus_prev;

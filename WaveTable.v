@@ -6,22 +6,27 @@
 
 module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut);
 
-	input clk_50, ar; 			//Basic 50 MHz clock and reset button.
-	input [3:0] keyVal; 			//A value 0-12 that determines the note.
-	input keyOn; 					//1 if key pressed, 0 if key released.
-	input bclk, daclrck; 		//These come from audio codec. Bitclock and Left/Right Clock. 
+	input clk_50;
+	input ar; 		
+	input [3:0] keyVal;			//A value 0-12 that determines the note.
+	input keyOn; 				//1 if key pressed, 0 if key released.
+	input bclk;
+	input daclrck; 		        //These come from audio codec. Bitclock and Left/Right Clock. 
 	input [1:0] waveSelect;		//Most significant 2 bits of address.
+	output wire [15:0] dataOut; //This is Dout but in Big Endian and an output port. goes to codec
+
+
 	reg [12:0] wavePosition; 	//Least significant 13 bits of address.
 	reg [7:0] scale; 				//This value is what we'll increment wave's address by.
 	reg RD; 							//We read but never write.
 	wire [15:0] Dout;				//Dout directly from dpram_ctrl.
-	output wire [15:0] dataOut;//This is Dout but in Big Endian and an output port.
 	wire [14:0] address; 		//15 bit address.
 	wire Done; 						//Basically never used. Feeds into dpram_ctrl
+
 										
 	//Lookup table for scale values
 	//These values are rounded to nearest int.								
-	wire [7:0] scaleTable [12:0]:
+	wire [7:0] scaleTable [12:0];
 		assign scaleTable[0] = 8'd74;	//A  0
 		assign scaleTable[1] = 8'd78;	//A# 1
 		assign scaleTable[2] = 8'd83;	//B  2

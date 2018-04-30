@@ -1,0 +1,10 @@
+
+State Machine - |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|cs
+Name cs.RdDone cs.RdCont cs.RdStart cs.WrDone cs.WrCont cs.WrStart cs.Idle 
+cs.Idle 0 0 0 0 0 0 0 
+cs.WrStart 0 0 0 0 0 1 1 
+cs.WrCont 0 0 0 0 1 0 1 
+cs.WrDone 0 0 0 1 0 0 1 
+cs.RdStart 0 0 1 0 0 0 1 
+cs.RdCont 0 1 0 0 0 0 1 
+cs.RdDone 1 0 0 0 0 0 1 

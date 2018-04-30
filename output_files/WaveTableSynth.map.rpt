@@ -1,0 +1,942 @@
+Analysis & Synthesis report for WaveTableSynth
+Mon Apr 30 17:35:29 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|cs
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated
+ 15. Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst
+ 16. Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "adc_proj:comb_8"
+ 19. Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst"
+ 20. Port Connectivity Checks: "kbd:keyboard_inst"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Apr 30 17:35:29 2018       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; WaveTableSynth                              ;
+; Top-level Entity Name              ; WaveTableSynth                              ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 148                                         ;
+;     Total combinational functions  ; 132                                         ;
+;     Dedicated logic registers      ; 78                                          ;
+; Total registers                    ; 78                                          ;
+; Total pins                         ; 34                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; WaveTableSynth     ; WaveTableSynth     ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; dpram.v                          ; yes             ; User Wizard-Generated File             ; H:/ECE641/WaveTableSynth/dpram.v                                             ;         ;
+; WaveTable.v                      ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/WaveTable.v                                         ;         ;
+; kbd_ps2.v                        ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/kbd_ps2.v                                           ;         ;
+; dpram_ctrl.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/dpram_ctrl.v                                        ;         ;
+; data_setup.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/data_setup.v                                        ;         ;
+; codec_prgm.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/codec_prgm.v                                        ;         ;
+; adc_proj.v                       ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/adc_proj.v                                          ;         ;
+; WaveTableSynth.v                 ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/WaveTableSynth.v                                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_o5q1.tdf           ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf                              ;         ;
+; allwaves.hex                     ; yes             ; Auto-Found Memory Initialization File  ; H:/ECE641/WaveTableSynth/allwaves.hex                                        ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/decode_msa.tdf                                   ;         ;
+; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/decode_f8a.tdf                                   ;         ;
+; db/mux_lob.tdf                   ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/mux_lob.tdf                                      ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 148      ;
+;                                             ;          ;
+; Total combinational functions               ; 132      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 82       ;
+;     -- 3 input functions                    ; 19       ;
+;     -- <=2 input functions                  ; 31       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 111      ;
+;     -- arithmetic mode                      ; 21       ;
+;                                             ;          ;
+; Total registers                             ; 78       ;
+;     -- Dedicated logic registers            ; 78       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 34       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; ar~input ;
+; Maximum fan-out                             ; 67       ;
+; Total fan-out                               ; 764      ;
+; Average fan-out                             ; 2.74     ;
++---------------------------------------------+----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+----------------+--------------+
+; |WaveTableSynth            ; 132 (0)             ; 78 (0)                    ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |WaveTableSynth                                  ; WaveTableSynth ; work         ;
+;    |adc_proj:comb_8|       ; 66 (0)              ; 35 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_8                  ; adc_proj       ; work         ;
+;       |codec_prgm:inst2|   ; 38 (38)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_8|codec_prgm:inst2 ; codec_prgm     ; work         ;
+;       |data_setup:inst1|   ; 28 (28)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_8|data_setup:inst1 ; data_setup     ; work         ;
+;    |kbd:keyboard_inst|     ; 66 (66)             ; 43 (43)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|kbd:keyboard_inst                ; kbd            ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|cs                    ;
++------------+-----------+-----------+------------+-----------+-----------+------------+---------+
+; Name       ; cs.RdDone ; cs.RdCont ; cs.RdStart ; cs.WrDone ; cs.WrCont ; cs.WrStart ; cs.Idle ;
++------------+-----------+-----------+------------+-----------+-----------+------------+---------+
+; cs.Idle    ; 0         ; 0         ; 0          ; 0         ; 0         ; 0          ; 0       ;
+; cs.WrStart ; 0         ; 0         ; 0          ; 0         ; 0         ; 1          ; 1       ;
+; cs.WrCont  ; 0         ; 0         ; 0          ; 0         ; 1         ; 0          ; 1       ;
+; cs.WrDone  ; 0         ; 0         ; 0          ; 1         ; 0         ; 0          ; 1       ;
+; cs.RdStart ; 0         ; 0         ; 1          ; 0         ; 0         ; 0          ; 1       ;
+; cs.RdCont  ; 0         ; 1         ; 0          ; 0         ; 0         ; 0          ; 1       ;
+; cs.RdDone  ; 1         ; 0         ; 0          ; 0         ; 0         ; 0          ; 1       ;
++------------+-----------+-----------+------------+-----------+-----------+------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                      ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                                                                                                            ; Reason for Removal                                           ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+; WaveTable:waveTable_inst|daclrck_prev                                                                                                    ; Stuck at GND due to stuck port clock                         ;
+; WaveTable:waveTable_inst|RD                                                                                                              ; Stuck at GND due to stuck port clock                         ;
+; WaveTable:waveTable_inst|wavePosition[0..12]                                                                                             ; Lost fanout                                                  ;
+; WaveTable:waveTable_inst|scale[0..7]                                                                                                     ; Lost fanout                                                  ;
+; kbd:keyboard_inst|minus_prev                                                                                                             ; Lost fanout                                                  ;
+; kbd:keyboard_inst|select[0,1]                                                                                                            ; Lost fanout                                                  ;
+; kbd:keyboard_inst|plus_prev                                                                                                              ; Lost fanout                                                  ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[22,23]                                                                                        ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[20,21]                                                                                        ; Stuck at VCC due to stuck port data_in                       ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[19]                                                                                           ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[18]                                                                                           ; Stuck at VCC due to stuck port data_in                       ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[16,17]                                                                                        ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[7,14]                                                                                      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[7]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[3]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[3,11]                                                                                      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[11]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[10]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[9]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[12]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[1]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[1,13]                                                                                      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[5]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[8]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[9]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[5]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[13]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[4]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[8]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[11]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[10]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[5]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[12]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[13]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[0]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0,14]                                                                                      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[2]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[7]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[4]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[2]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[6]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[3]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[8]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[4]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[10]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[9]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[12]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[6]                                                                                         ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[1,2,6,14]                                                                                  ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[15]                                                                                        ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|address_reg_b[0,1]     ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|out_address_reg_b[0,1] ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0] ;
+; adc_proj:comb_8|dac_ldat[0]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[0]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0]                                                                                         ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[1]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[1]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[2]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[2]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[3]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[3]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[4]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[4]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[5]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[5]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[6]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[6]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[7]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[7]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[8]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[8]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[9]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[9]                                                                                                              ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[10]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[10]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[11]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[11]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[12]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[12]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[13]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[13]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[14]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[14]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[15]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[15]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[5,8,13..15]                                                                                   ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~2                                                                                            ; Lost fanout                                                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~3                                                                                            ; Lost fanout                                                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~4                                                                                            ; Lost fanout                                                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrStart                                                                                      ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdStart                                                                                      ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrCont                                                                                       ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrDone                                                                                       ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdCont                                                                                       ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdDone                                                                                       ; Stuck at GND due to stuck port data_in                       ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[0..15]                                                                                     ; Stuck at GND due to stuck port clock_enable                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|WE                                                                                              ; Lost fanout                                                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.Idle                                                                                         ; Lost fanout                                                  ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[1]                                                                                            ; Merged with adc_proj:comb_8|codec_prgm:inst2|data_sent[11]   ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[7]                                                                                            ; Merged with adc_proj:comb_8|codec_prgm:inst2|data_sent[6]    ;
+; adc_proj:comb_8|codec_prgm:inst2|data_sent[3]                                                                                            ; Merged with adc_proj:comb_8|codec_prgm:inst2|data_sent[2]    ;
+; adc_proj:comb_8|dac_rdat[16]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[16]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[17]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[17]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[18]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[18]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[19]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[19]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[20]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[20]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[21]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[21]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[22]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[22]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[23]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[23]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[24]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[24]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[25]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[25]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[26]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[26]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[27]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[27]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[28]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[28]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[29]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[29]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[30]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[30]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_rdat[31]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dac_ldat[31]                                                                                                             ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_8|dacout_sr[0..30]                                                                                                         ; Stuck at GND due to stuck port data_in                       ;
+; Total Number of Removed Registers = 215                                                                                                  ;                                                              ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                           ;
++-----------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-----------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; WaveTable:waveTable_inst|daclrck_prev               ; Stuck at GND              ; WaveTable:waveTable_inst|RD, WaveTable:waveTable_inst|wavePosition[12],             ;
+;                                                     ; due to stuck port clock   ; WaveTable:waveTable_inst|wavePosition[11],                                          ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[10],                                          ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[9], WaveTable:waveTable_inst|wavePosition[8], ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[7], WaveTable:waveTable_inst|wavePosition[6], ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[5], WaveTable:waveTable_inst|wavePosition[4], ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[3], WaveTable:waveTable_inst|wavePosition[2], ;
+;                                                     ;                           ; WaveTable:waveTable_inst|wavePosition[1], WaveTable:waveTable_inst|wavePosition[0], ;
+;                                                     ;                           ; kbd:keyboard_inst|select[1], kbd:keyboard_inst|select[0],                           ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[0],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[15],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[14],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[13],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[12],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[11],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[10],                                  ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[9],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[8],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[7],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[6],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[5],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[4],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[3],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[2],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[1],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|Dout[0],                                   ;
+;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|WE, adc_proj:comb_8|dac_rdat[17],          ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[17], adc_proj:comb_8|dac_rdat[18],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[18], adc_proj:comb_8|dac_rdat[19],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[19], adc_proj:comb_8|dac_rdat[20],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[20], adc_proj:comb_8|dac_rdat[21],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[21], adc_proj:comb_8|dac_rdat[22],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[22], adc_proj:comb_8|dac_rdat[23],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[23], adc_proj:comb_8|dac_rdat[24],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[24], adc_proj:comb_8|dac_rdat[25],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[25], adc_proj:comb_8|dac_rdat[26],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[26], adc_proj:comb_8|dac_rdat[27],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[27], adc_proj:comb_8|dac_rdat[28],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[28], adc_proj:comb_8|dac_rdat[29],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[29], adc_proj:comb_8|dac_rdat[30],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[30], adc_proj:comb_8|dac_rdat[31],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[31], adc_proj:comb_8|dacout_sr[0],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[1], adc_proj:comb_8|dacout_sr[2],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[3], adc_proj:comb_8|dacout_sr[4],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[5], adc_proj:comb_8|dacout_sr[6],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[7], adc_proj:comb_8|dacout_sr[8],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[9], adc_proj:comb_8|dacout_sr[10],                        ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[11], adc_proj:comb_8|dacout_sr[12],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[13], adc_proj:comb_8|dacout_sr[14],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[15], adc_proj:comb_8|dacout_sr[16],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[17], adc_proj:comb_8|dacout_sr[18],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[19], adc_proj:comb_8|dacout_sr[20],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[21], adc_proj:comb_8|dacout_sr[22],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[23], adc_proj:comb_8|dacout_sr[24],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[25], adc_proj:comb_8|dacout_sr[26],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[27], adc_proj:comb_8|dacout_sr[28],                       ;
+;                                                     ;                           ; adc_proj:comb_8|dacout_sr[29], adc_proj:comb_8|dacout_sr[30]                        ;
+; adc_proj:comb_8|dac_ldat[0]                         ; Stuck at GND              ; adc_proj:comb_8|dac_ldat[1], adc_proj:comb_8|dac_ldat[2],                           ;
+;                                                     ; due to stuck port data_in ; adc_proj:comb_8|dac_ldat[3], adc_proj:comb_8|dac_ldat[4],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[5], adc_proj:comb_8|dac_ldat[6],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[7], adc_proj:comb_8|dac_ldat[8],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[9], adc_proj:comb_8|dac_ldat[10],                          ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[11], adc_proj:comb_8|dac_ldat[12],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[13], adc_proj:comb_8|dac_ldat[14],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_ldat[15], adc_proj:comb_8|dac_ldat[16]                          ;
+; adc_proj:comb_8|dac_rdat[0]                         ; Stuck at GND              ; adc_proj:comb_8|dac_rdat[1], adc_proj:comb_8|dac_rdat[2],                           ;
+;                                                     ; due to stuck port data_in ; adc_proj:comb_8|dac_rdat[3], adc_proj:comb_8|dac_rdat[4],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[5], adc_proj:comb_8|dac_rdat[6],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[7], adc_proj:comb_8|dac_rdat[8],                           ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[9], adc_proj:comb_8|dac_rdat[10],                          ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[11], adc_proj:comb_8|dac_rdat[12],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[13], adc_proj:comb_8|dac_rdat[14],                         ;
+;                                                     ;                           ; adc_proj:comb_8|dac_rdat[15], adc_proj:comb_8|dac_rdat[16]                          ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrStart ; Stuck at GND              ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrCont,                                 ;
+;                                                     ; due to stuck port data_in ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrDone                                  ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdStart ; Stuck at GND              ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdCont,                                 ;
+;                                                     ; due to stuck port data_in ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdDone                                  ;
++-----------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 10    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 65    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 33    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------+
+; Inverted Register Statistics                           ;
++----------------------------------------------+---------+
+; Inverted Register                            ; Fan out ;
++----------------------------------------------+---------+
+; adc_proj:comb_8|codec_prgm:inst2|sclk_enable ; 2       ;
+; kbd:keyboard_inst|filter_sr[5]               ; 3       ;
+; kbd:keyboard_inst|filter_sr[3]               ; 2       ;
+; kbd:keyboard_inst|filter_sr[0]               ; 1       ;
+; kbd:keyboard_inst|filter_sr[4]               ; 2       ;
+; kbd:keyboard_inst|filter_sr[2]               ; 2       ;
+; kbd:keyboard_inst|filter_sr[7]               ; 2       ;
+; kbd:keyboard_inst|filter_sr[6]               ; 2       ;
+; kbd:keyboard_inst|filter_sr[1]               ; 2       ;
+; adc_proj:comb_8|codec_prgm:inst2|bit_sent    ; 5       ;
+; Total number of inverted registers = 10      ;         ;
++----------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_8|dac_ldat[22]                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_8|codec_prgm:inst2|counter[5] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_8|dac_rdat[26]                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                         ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                          ;
++---------------------------------+--------------------+------+----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; Idle           ; 000   ; Unsigned Binary                                              ;
+; WrStart        ; 001   ; Unsigned Binary                                              ;
+; WrCont         ; 010   ; Unsigned Binary                                              ;
+; WrDone         ; 011   ; Unsigned Binary                                              ;
+; RdStart        ; 100   ; Unsigned Binary                                              ;
+; RdCont         ; 101   ; Unsigned Binary                                              ;
+; RdDone         ; 110   ; Unsigned Binary                                              ;
+; Err            ; 111   ; Unsigned Binary                                              ;
+; Writes         ; 1     ; Unsigned Binary                                              ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                                ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                             ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                             ;
+; WIDTH_A                            ; 16                   ; Signed Integer                                                      ;
+; WIDTHAD_A                          ; 15                   ; Signed Integer                                                      ;
+; NUMWORDS_A                         ; 32768                ; Signed Integer                                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_B                            ; 16                   ; Signed Integer                                                      ;
+; WIDTHAD_B                          ; 15                   ; Signed Integer                                                      ;
+; NUMWORDS_B                         ; 32768                ; Signed Integer                                                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                             ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                             ;
+; OUTDATA_REG_B                      ; CLOCK0               ; Untyped                                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
+; INIT_FILE                          ; AllWaves.hex         ; Untyped                                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                             ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_o5q1      ; Untyped                                                             ;
++------------------------------------+----------------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                               ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                              ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                                  ;
+; Entity Instance                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                          ;
+;     -- WIDTH_A                            ; 16                                                                                 ;
+;     -- NUMWORDS_A                         ; 32768                                                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                       ;
+;     -- WIDTH_B                            ; 16                                                                                 ;
+;     -- NUMWORDS_B                         ; 32768                                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                             ;
+;     -- OUTDATA_REG_B                      ; CLOCK0                                                                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adc_proj:comb_8"                                                                                            ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; daclrck ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; dacdat  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; adcdat  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; bclk    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; adclrck ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst"                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; WR   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "kbd:keyboard_inst"                                                                                        ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                                                  ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; psclk ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; psdat ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 34                          ;
+; cycloneiii_ff         ; 78                          ;
+;     CLR               ; 40                          ;
+;     CLR SCLR          ; 4                           ;
+;     ENA               ; 12                          ;
+;     ENA CLR           ; 15                          ;
+;     ENA CLR SCLR      ; 6                           ;
+;     plain             ; 1                           ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 133                         ;
+;     arith             ; 21                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 112                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 82                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.82                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Apr 30 17:34:54 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WaveTableSynth -c WaveTableSynth
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file dpram.v
+    Info (12023): Found entity 1: dpram File: H:/ECE641/WaveTableSynth/dpram.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file wavetable.v
+    Info (12023): Found entity 1: WaveTable File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file kbd_ps2.v
+    Info (12023): Found entity 1: kbd File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file dpram_ctrl.v
+    Info (12023): Found entity 1: dpram_ctrl File: H:/ECE641/WaveTableSynth/dpram_ctrl.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file data_setup.v
+    Info (12023): Found entity 1: data_setup File: H:/ECE641/WaveTableSynth/data_setup.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file codec_prgm.v
+    Info (12023): Found entity 1: codec_prgm File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adc_proj.v
+    Info (12023): Found entity 1: adc_proj File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file wavetablesynth.v
+    Info (12023): Found entity 1: WaveTableSynth File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 3
+Warning (10236): Verilog HDL Implicit Net warning at WaveTableSynth.v(37): created implicit net for "BCLK" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at WaveTableSynth.v(53): instance has no name File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 53
+Info (12127): Elaborating entity "WaveTableSynth" for the top level hierarchy
+Info (12128): Elaborating entity "kbd" for hierarchy "kbd:keyboard_inst" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 36
+Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(147): truncated value with size 32 to match size of target (2) File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 147
+Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(149): truncated value with size 32 to match size of target (2) File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 149
+Info (12128): Elaborating entity "WaveTable" for hierarchy "WaveTable:waveTable_inst" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 37
+Warning (10036): Verilog HDL or VHDL warning at WaveTable.v(102): object "lrck_negedge" assigned a value but never read File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 102
+Info (12128): Elaborating entity "dpram_ctrl" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst" File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 111
+Info (12128): Elaborating entity "dpram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram" File: H:/ECE641/WaveTableSynth/dpram_ctrl.v Line: 89
+Info (12128): Elaborating entity "altsyncram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
+Info (12130): Elaborated megafunction instantiation "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
+Info (12133): Instantiated megafunction "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" with the following parameter: File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK0"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
+    Info (12134): Parameter "init_file" = "AllWaves.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "32768"
+    Info (12134): Parameter "numwords_b" = "32768"
+    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "15"
+    Info (12134): Parameter "widthad_b" = "15"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_b" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o5q1.tdf
+    Info (12023): Found entity 1: altsyncram_o5q1 File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_o5q1" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_msa.tdf
+    Info (12023): Found entity 1: decode_msa File: H:/ECE641/WaveTableSynth/db/decode_msa.tdf Line: 22
+Info (12128): Elaborating entity "decode_msa" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_msa:decode2" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_f8a.tdf
+    Info (12023): Found entity 1: decode_f8a File: H:/ECE641/WaveTableSynth/db/decode_f8a.tdf Line: 22
+Info (12128): Elaborating entity "decode_f8a" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_lob.tdf
+    Info (12023): Found entity 1: mux_lob File: H:/ECE641/WaveTableSynth/db/mux_lob.tdf Line: 22
+Info (12128): Elaborating entity "mux_lob" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|mux_lob:mux3" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 48
+Info (12128): Elaborating entity "adc_proj" for hierarchy "adc_proj:comb_8" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 53
+Info (12128): Elaborating entity "data_setup" for hierarchy "adc_proj:comb_8|data_setup:inst1" File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 45
+Info (12128): Elaborating entity "codec_prgm" for hierarchy "adc_proj:comb_8|codec_prgm:inst2" File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 48
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a16" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 609
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a17" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 644
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a18" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 679
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a19" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 714
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a20" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 749
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a21" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 784
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a22" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 819
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a23" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 854
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a24" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 889
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a25" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 924
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a26" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 959
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a27" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 994
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a28" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1029
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a29" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1064
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a30" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1099
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a31" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1134
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a32" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1169
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a33" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1204
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a34" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1239
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a35" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1274
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a36" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1309
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a37" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1344
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a38" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1379
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a39" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1414
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a40" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1449
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a41" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1484
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a42" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1519
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a43" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1554
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a44" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1589
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a45" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1624
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a46" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1659
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a47" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1694
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a48" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1729
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a49" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1764
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a50" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1799
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a51" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1834
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a52" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1869
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a53" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1904
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a54" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1939
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a55" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1974
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a56" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2009
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a57" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2044
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a58" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2079
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a59" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2114
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a60" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2149
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a61" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2184
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a62" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2219
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a63" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2254
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a16" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 609
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a17" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 644
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a18" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 679
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a19" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 714
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a20" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 749
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a21" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 784
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a22" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 819
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a23" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 854
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a24" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 889
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a25" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 924
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a26" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 959
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a27" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 994
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a28" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1029
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a29" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1064
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a30" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1099
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a31" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1134
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a32" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1169
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a33" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1204
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a34" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1239
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a35" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1274
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a36" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1309
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a37" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1344
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a38" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1379
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a39" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1414
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a40" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1449
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a41" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1484
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a42" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1519
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a43" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1554
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a44" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1589
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a45" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1624
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a46" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1659
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a47" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1694
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a48" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1729
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a49" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1764
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a50" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1799
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a51" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1834
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a52" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1869
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a53" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1904
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a54" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1939
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a55" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 1974
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a56" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2009
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a57" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2044
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a58" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2079
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a59" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2114
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a60" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2149
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a61" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2184
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a62" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2219
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a63" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 2254
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a15" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 574
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a14" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 539
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a13" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 504
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a12" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 469
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a11" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 434
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a10" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 399
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a9" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 364
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a8" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 329
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a7" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 294
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a6" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 259
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a5" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 224
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a4" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 189
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a3" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 154
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a2" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 119
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a1" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 84
+        Warning (14320): Synthesized away node "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a0" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 49
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 21
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 9
+    Warning (13410): Pin "keyVal_out[4]" is stuck at GND File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 23
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 30 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 10
+    Warning (15610): No output dependent on input pin "AUD_ADCLRCK" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 14
+    Warning (15610): No output dependent on input pin "bitcrush" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 15
+    Warning (15610): No output dependent on input pin "AUD_BCLK" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 12
+    Warning (15610): No output dependent on input pin "AUD_DACLRCK" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 13
+Info (21057): Implemented 187 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 153 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 134 warnings
+    Info: Peak virtual memory: 679 megabytes
+    Info: Processing ended: Mon Apr 30 17:35:29 2018
+    Info: Elapsed time: 00:00:35
+    Info: Total CPU time (on all processors): 00:00:26
+
+

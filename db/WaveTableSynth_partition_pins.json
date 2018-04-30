@@ -1,0 +1,117 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_XCK",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[0]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[1]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[2]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[3]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[4]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[5]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[6]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[7]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[8]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[9]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[10]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[11]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[12]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[13]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[14]",
+					"strict" : false
+				},
+				{
+					"name" : "bitmask[15]",
+					"strict" : false
+				},
+				{
+					"name" : "keyVal_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "keyVal_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "keyVal_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "keyVal_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SDAT",
+					"strict" : false
+				},
+				{
+					"name" : "ar",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_dat",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

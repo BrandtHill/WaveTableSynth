@@ -54,5 +54,43 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name VERILOG_FILE WaveTableSynth.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_D2 -to AUD_ADCDAT
+set_location_assignment PIN_C2 -to AUD_ADCLRCK
+set_location_assignment PIN_F2 -to AUD_BCLK
+set_location_assignment PIN_D1 -to AUD_DACDAT
+set_location_assignment PIN_E3 -to AUD_DACLRCK
+set_location_assignment PIN_E1 -to AUD_XCK
+set_location_assignment PIN_B7 -to SCLK
+set_location_assignment PIN_A8 -to SDAT
+set_location_assignment PIN_Y2 -to clk_50
+set_location_assignment PIN_M23 -to ar
+set_location_assignment PIN_AB28 -to bitcrush
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk_50
+set_location_assignment PIN_G19 -to bitmask[0]
+set_location_assignment PIN_F19 -to bitmask[1]
+set_location_assignment PIN_E19 -to bitmask[2]
+set_location_assignment PIN_F21 -to bitmask[3]
+set_location_assignment PIN_F18 -to bitmask[4]
+set_location_assignment PIN_E18 -to bitmask[5]
+set_location_assignment PIN_J19 -to bitmask[6]
+set_location_assignment PIN_H19 -to bitmask[7]
+set_location_assignment PIN_J17 -to bitmask[8]
+set_location_assignment PIN_G17 -to bitmask[9]
+set_location_assignment PIN_J15 -to bitmask[10]
+set_location_assignment PIN_H16 -to bitmask[11]
+set_location_assignment PIN_J16 -to bitmask[12]
+set_location_assignment PIN_H17 -to bitmask[13]
+set_location_assignment PIN_F15 -to bitmask[14]
+set_location_assignment PIN_G15 -to bitmask[15]
+set_location_assignment PIN_G6 -to ps2_clk
+set_location_assignment PIN_H5 -to ps2_dat
+set_location_assignment PIN_E21 -to keyVal_out[0]
+set_location_assignment PIN_E22 -to keyVal_out[1]
+set_location_assignment PIN_E25 -to keyVal_out[2]
+set_location_assignment PIN_E24 -to keyVal_out[3]
+set_location_assignment PIN_G21 -to keyVal_out[4]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

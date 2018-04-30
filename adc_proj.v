@@ -18,12 +18,13 @@ input AUD_DACLRCK,
 input AUD_ADCLRCK,
 
 input bitcrush,
+input [15:0] Din,
 
 output daclrck,
 output dacdat,
 output adcdat,
 output bclk,
-output adclrck,
+output adclrck
 
 );
 
@@ -37,7 +38,6 @@ assign dacdat = AUD_DACDAT;
 assign adcdat = AUD_ADCDAT;	//unused since no analog being fed in
 assign adclrck = AUD_ADCLRCK;
 
-wire [15:0] Dout;
 
 //instantiations
 
@@ -66,7 +66,7 @@ always @(posedge bclk or negedge ar)
 		dac_ldat = 32'b0;
 	else
 		if(ldat_ldclr) // pos edge of LRC  
-			dac_ldat = {Dout,16'h0};
+			dac_ldat = {Din,16'h0};
 		else if (AUD_DACLRCK == 1'b1)
 			dac_ldat = {dac_ldat[30:0], 1'b0};
 
@@ -75,7 +75,7 @@ always @(posedge bclk or negedge ar)
 		dac_rdat = 32'b0;
 	else
 		if(rdat_ldclr) // neg edge of LRC
-			dac_rdat = {Dout,16'h0};
+			dac_rdat = {Din,16'h0};
 		else if (AUD_DACLRCK == 1'b0)
 			dac_rdat = {dac_rdat[30:0], 1'b0};		
 			
