@@ -1,5 +1,5 @@
 Fitter report for WaveTableSynth
-Mon Apr 30 18:03:14 2018
+Tue May 01 12:28:54 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -28,21 +28,23 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  20. Pad To Core Delay Chain Fanout
  21. Control Signals
  22. Global & Other Fast Signals
- 23. Routing Usage Summary
- 24. LAB Logic Elements
- 25. LAB-wide Signals
- 26. LAB Signals Sourced
- 27. LAB Signals Sourced Out
- 28. LAB Distinct Inputs
- 29. I/O Rules Summary
- 30. I/O Rules Details
- 31. I/O Rules Matrix
- 32. Fitter Device Options
- 33. Operating Settings and Conditions
- 34. Estimated Delay Added for Hold Timing Summary
- 35. Estimated Delay Added for Hold Timing Details
- 36. Fitter Messages
- 37. Fitter Suppressed Messages
+ 23. Non-Global High Fan-Out Signals
+ 24. Fitter RAM Summary
+ 25. Routing Usage Summary
+ 26. LAB Logic Elements
+ 27. LAB-wide Signals
+ 28. LAB Signals Sourced
+ 29. LAB Signals Sourced Out
+ 30. LAB Distinct Inputs
+ 31. I/O Rules Summary
+ 32. I/O Rules Details
+ 33. I/O Rules Matrix
+ 34. Fitter Device Options
+ 35. Operating Settings and Conditions
+ 36. Estimated Delay Added for Hold Timing Summary
+ 37. Estimated Delay Added for Hold Timing Details
+ 38. Fitter Messages
+ 39. Fitter Suppressed Messages
 
 
 
@@ -68,20 +70,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Apr 30 18:03:14 2018       ;
+; Fitter Status                      ; Successful - Tue May 01 12:28:54 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; WaveTableSynth                              ;
 ; Top-level Entity Name              ; WaveTableSynth                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 141 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 132 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 74 / 114,480 ( < 1 % )                      ;
-; Total registers                    ; 74                                          ;
+; Total logic elements               ; 302 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 240 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 207 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 207                                         ;
 ; Total pins                         ; 37 / 529 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                       ;
+; Total memory bits                  ; 524,288 / 3,981,312 ( 13 % )                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -159,8 +161,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processors 3-4         ;   0.2%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processor 3            ;   0.4%      ;
+;     Processor 4            ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -170,8 +173,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 296 ) ; 0.00 % ( 0 / 296 )         ; 0.00 % ( 0 / 296 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 296 ) ; 0.00 % ( 0 / 296 )         ; 0.00 % ( 0 / 296 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 601 ) ; 0.00 % ( 0 / 601 )         ; 0.00 % ( 0 / 601 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 601 ) ; 0.00 % ( 0 / 601 )         ; 0.00 % ( 0 / 601 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,7 +197,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 286 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 591 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -205,55 +208,55 @@ refer to the applicable agreement for further details.
 The pin-out file can be found in H:/ECE641/WaveTableSynth/output_files/WaveTableSynth.pin.
 
 
-+-----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                         ;
-+---------------------------------------------+-------------------------+
-; Resource                                    ; Usage                   ;
-+---------------------------------------------+-------------------------+
-; Total logic elements                        ; 141 / 114,480 ( < 1 % ) ;
-;     -- Combinational with no register       ; 67                      ;
-;     -- Register only                        ; 9                       ;
-;     -- Combinational with a register        ; 65                      ;
-;                                             ;                         ;
-; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 84                      ;
-;     -- 3 input functions                    ; 15                      ;
-;     -- <=2 input functions                  ; 33                      ;
-;     -- Register only                        ; 9                       ;
-;                                             ;                         ;
-; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 111                     ;
-;     -- arithmetic mode                      ; 21                      ;
-;                                             ;                         ;
-; Total registers*                            ; 74 / 117,053 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 74 / 114,480 ( < 1 % )  ;
-;     -- I/O registers                        ; 0 / 2,573 ( 0 % )       ;
-;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 12 / 7,155 ( < 1 % )    ;
-; Virtual pins                                ; 0                       ;
-; I/O pins                                    ; 37 / 529 ( 7 % )        ;
-;     -- Clock pins                           ; 1 / 7 ( 14 % )          ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )           ;
-;                                             ;                         ;
-; M9Ks                                        ; 0 / 432 ( 0 % )         ;
-; Total block memory bits                     ; 0 / 3,981,312 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 3,981,312 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )         ;
-; PLLs                                        ; 0 / 4 ( 0 % )           ;
-; Global signals                              ; 4                       ;
-;     -- Global clocks                        ; 4 / 20 ( 20 % )         ;
-; JTAGs                                       ; 0 / 1 ( 0 % )           ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
-; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.0%      ;
-; Peak interconnect usage (total/H/V)         ; 0.6% / 0.9% / 0.4%      ;
-; Maximum fan-out                             ; 67                      ;
-; Highest non-global fan-out                  ; 67                      ;
-; Total fan-out                               ; 768                     ;
-; Average fan-out                             ; 2.53                    ;
-+---------------------------------------------+-------------------------+
++----------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                              ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Total logic elements                        ; 302 / 114,480 ( < 1 % )      ;
+;     -- Combinational with no register       ; 95                           ;
+;     -- Register only                        ; 62                           ;
+;     -- Combinational with a register        ; 145                          ;
+;                                             ;                              ;
+; Logic element usage by number of LUT inputs ;                              ;
+;     -- 4 input functions                    ; 158                          ;
+;     -- 3 input functions                    ; 31                           ;
+;     -- <=2 input functions                  ; 51                           ;
+;     -- Register only                        ; 62                           ;
+;                                             ;                              ;
+; Logic elements by mode                      ;                              ;
+;     -- normal mode                          ; 207                          ;
+;     -- arithmetic mode                      ; 33                           ;
+;                                             ;                              ;
+; Total registers*                            ; 207 / 117,053 ( < 1 % )      ;
+;     -- Dedicated logic registers            ; 207 / 114,480 ( < 1 % )      ;
+;     -- I/O registers                        ; 0 / 2,573 ( 0 % )            ;
+;                                             ;                              ;
+; Total LABs:  partially or completely used   ; 34 / 7,155 ( < 1 % )         ;
+; Virtual pins                                ; 0                            ;
+; I/O pins                                    ; 37 / 529 ( 7 % )             ;
+;     -- Clock pins                           ; 1 / 7 ( 14 % )               ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )                ;
+;                                             ;                              ;
+; M9Ks                                        ; 64 / 432 ( 15 % )            ;
+; Total block memory bits                     ; 524,288 / 3,981,312 ( 13 % ) ;
+; Total block memory implementation bits      ; 589,824 / 3,981,312 ( 15 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )              ;
+; PLLs                                        ; 0 / 4 ( 0 % )                ;
+; Global signals                              ; 5                            ;
+;     -- Global clocks                        ; 5 / 20 ( 25 % )              ;
+; JTAGs                                       ; 0 / 1 ( 0 % )                ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )                ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )                ;
+; Oscillator blocks                           ; 0 / 1 ( 0 % )                ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )                ;
+; Average interconnect usage (total/H/V)      ; 0.5% / 0.5% / 0.4%           ;
+; Peak interconnect usage (total/H/V)         ; 5.6% / 5.6% / 5.6%           ;
+; Maximum fan-out                             ; 896                          ;
+; Highest non-global fan-out                  ; 896                          ;
+; Total fan-out                               ; 2667                         ;
+; Average fan-out                             ; 4.03                         ;
++---------------------------------------------+------------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -265,33 +268,34 @@ The pin-out file can be found in H:/ECE641/WaveTableSynth/output_files/WaveTable
 +---------------------------------------------+------------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                    ; Low                            ;
 ;                                             ;                        ;                                ;
-; Total logic elements                        ; 141 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 67                     ; 0                              ;
-;     -- Register only                        ; 9                      ; 0                              ;
-;     -- Combinational with a register        ; 65                     ; 0                              ;
+; Total logic elements                        ; 302 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 95                     ; 0                              ;
+;     -- Register only                        ; 62                     ; 0                              ;
+;     -- Combinational with a register        ; 145                    ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 84                     ; 0                              ;
-;     -- 3 input functions                    ; 15                     ; 0                              ;
-;     -- <=2 input functions                  ; 33                     ; 0                              ;
-;     -- Register only                        ; 9                      ; 0                              ;
+;     -- 4 input functions                    ; 158                    ; 0                              ;
+;     -- 3 input functions                    ; 31                     ; 0                              ;
+;     -- <=2 input functions                  ; 51                     ; 0                              ;
+;     -- Register only                        ; 62                     ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 111                    ; 0                              ;
-;     -- arithmetic mode                      ; 21                     ; 0                              ;
+;     -- normal mode                          ; 207                    ; 0                              ;
+;     -- arithmetic mode                      ; 33                     ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total registers                             ; 74                     ; 0                              ;
-;     -- Dedicated logic registers            ; 74 / 114480 ( < 1 % )  ; 0 / 114480 ( 0 % )             ;
+; Total registers                             ; 207                    ; 0                              ;
+;     -- Dedicated logic registers            ; 207 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
 ;     -- I/O registers                        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 12 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 34 / 7155 ( < 1 % )    ; 0 / 7155 ( 0 % )               ;
 ;                                             ;                        ;                                ;
 ; Virtual pins                                ; 0                      ; 0                              ;
 ; I/O pins                                    ; 37                     ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ; 0 / 532 ( 0 % )                ;
-; Total memory bits                           ; 0                      ; 0                              ;
-; Total RAM block bits                        ; 0                      ; 0                              ;
-; Clock control block                         ; 4 / 24 ( 16 % )        ; 0 / 24 ( 0 % )                 ;
+; Total memory bits                           ; 524288                 ; 0                              ;
+; Total RAM block bits                        ; 589824                 ; 0                              ;
+; M9K                                         ; 64 / 432 ( 14 % )      ; 0 / 432 ( 0 % )                ;
+; Clock control block                         ; 5 / 24 ( 20 % )        ; 0 / 24 ( 0 % )                 ;
 ;                                             ;                        ;                                ;
 ; Connections                                 ;                        ;                                ;
 ;     -- Input Connections                    ; 1                      ; 0                              ;
@@ -300,8 +304,8 @@ The pin-out file can be found in H:/ECE641/WaveTableSynth/output_files/WaveTable
 ;     -- Registered Output Connections        ; 0                      ; 0                              ;
 ;                                             ;                        ;                                ;
 ; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 763                    ; 5                              ;
-;     -- Registered Connections               ; 318                    ; 0                              ;
+;     -- Total Connections                    ; 3558                   ; 5                              ;
+;     -- Registered Connections               ; 1524                   ; 0                              ;
 ;                                             ;                        ;                                ;
 ; External Connections                        ;                        ;                                ;
 ;     -- Top                                  ; 2                      ; 0                              ;
@@ -335,11 +339,11 @@ The pin-out file can be found in H:/ECE641/WaveTableSynth/output_files/WaveTable
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; AUD_ADCDAT  ; D2    ; 1        ; 0            ; 68           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; AUD_ADCLRCK ; C2    ; 1        ; 0            ; 69           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; AUD_BCLK    ; F2    ; 1        ; 0            ; 60           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; AUD_DACLRCK ; E3    ; 1        ; 0            ; 66           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; ar          ; M23   ; 6        ; 115          ; 40           ; 7            ; 67                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; AUD_BCLK    ; F2    ; 1        ; 0            ; 60           ; 14           ; 65                    ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; AUD_DACLRCK ; E3    ; 1        ; 0            ; 66           ; 14           ; 78                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; ar          ; M23   ; 6        ; 115          ; 40           ; 7            ; 157                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; bitcrush    ; AB28  ; 5        ; 115          ; 17           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; clk_50      ; Y2    ; 2        ; 0            ; 36           ; 14           ; 20                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ; no        ;
+; clk_50      ; Y2    ; 2        ; 0            ; 36           ; 14           ; 199                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVCMOS ; --                        ; User                 ; no        ;
 ; ps2_clk     ; G6    ; 1        ; 0            ; 67           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; ps2_dat     ; H5    ; 1        ; 0            ; 59           ; 21           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +-------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
@@ -380,13 +384,13 @@ The pin-out file can be found in H:/ECE641/WaveTableSynth/output_files/WaveTable
 +-------------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+---------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
-+------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+----------------------------------------------+
-; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination                ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group                          ;
-+------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+----------------------------------------------+
-; SDAT ; A8    ; 8        ; 18           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; adc_proj:comb_11|codec_prgm:inst2|ack_enable ;
-+------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+----------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Output Termination                ; Termination Control Block ; Output Buffer Pre-emphasis ; Location assigned by ; Output Enable Source ; Output Enable Group                         ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------+
+; SDAT ; A8    ; 8        ; 18           ; 73           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; no         ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; User                 ; 0 pF                 ; adc_proj:comb_3|codec_prgm:inst2|ack_enable ;
++------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------+-----------------+------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+----------------------+----------------------+---------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -1253,26 +1257,33 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; debug[5]    ; Incomplete set of assignments ;
 ; debug[6]    ; Incomplete set of assignments ;
 ; debug[7]    ; Incomplete set of assignments ;
-; AUD_BCLK    ; Incomplete set of assignments ;
-; AUD_DACLRCK ; Incomplete set of assignments ;
 ; SDAT        ; Incomplete set of assignments ;
 ; ar          ; Incomplete set of assignments ;
+; AUD_BCLK    ; Incomplete set of assignments ;
+; AUD_DACLRCK ; Incomplete set of assignments ;
 ; ps2_dat     ; Incomplete set of assignments ;
 ; ps2_clk     ; Incomplete set of assignments ;
 +-------------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                               ; Entity Name    ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+----------------+--------------+
-; |WaveTableSynth            ; 141 (0)     ; 74 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 37   ; 0            ; 67 (0)       ; 9 (0)             ; 65 (0)           ; |WaveTableSynth                                   ; WaveTableSynth ; work         ;
-;    |adc_proj:comb_11|      ; 69 (0)      ; 35 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (0)       ; 2 (0)             ; 33 (0)           ; |WaveTableSynth|adc_proj:comb_11                  ; adc_proj       ; work         ;
-;       |codec_prgm:inst2|   ; 47 (47)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 29 (29)      ; 1 (1)             ; 17 (17)          ; |WaveTableSynth|adc_proj:comb_11|codec_prgm:inst2 ; codec_prgm     ; work         ;
-;       |data_setup:inst1|   ; 29 (29)     ; 17 (17)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 1 (1)             ; 23 (23)          ; |WaveTableSynth|adc_proj:comb_11|data_setup:inst1 ; data_setup     ; work         ;
-;    |kbd:keyboard_inst|     ; 72 (72)     ; 39 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (33)      ; 7 (7)             ; 32 (32)          ; |WaveTableSynth|kbd:keyboard_inst                 ; kbd            ; work         ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------+----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                        ; Entity Name     ; Library Name ;
++-------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |WaveTableSynth                                 ; 302 (1)     ; 207 (0)                   ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 37   ; 0            ; 95 (1)       ; 62 (0)            ; 145 (0)          ; |WaveTableSynth                                                                                                                                            ; WaveTableSynth  ; work         ;
+;    |WaveTable:waveTable_inst|                   ; 85 (29)     ; 62 (23)                   ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (6)       ; 20 (2)            ; 42 (21)          ; |WaveTableSynth|WaveTable:waveTable_inst                                                                                                                   ; WaveTable       ; work         ;
+;       |dpram_ctrl:inst|                         ; 56 (34)     ; 39 (35)                   ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (1)       ; 18 (14)           ; 21 (1)           ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst                                                                                                   ; dpram_ctrl      ; work         ;
+;          |dpram:ram|                            ; 40 (0)      ; 4 (0)                     ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (0)       ; 4 (0)             ; 20 (0)           ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram                                                                                         ; dpram           ; work         ;
+;             |altsyncram:altsyncram_component|   ; 40 (0)      ; 4 (0)                     ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (0)       ; 4 (0)             ; 20 (0)           ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component                                                         ; altsyncram      ; work         ;
+;                |altsyncram_o5q1:auto_generated| ; 40 (4)      ; 4 (4)                     ; 0 (0)         ; 524288      ; 64   ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (0)       ; 4 (4)             ; 20 (0)           ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated                          ; altsyncram_o5q1 ; work         ;
+;                   |decode_f8a:rden_decode_b|    ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a      ; work         ;
+;                   |mux_lob:mux3|                ; 32 (32)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 16 (16)          ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|mux_lob:mux3             ; mux_lob         ; work         ;
+;    |adc_proj:comb_3|                            ; 133 (64)    ; 98 (63)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 35 (1)       ; 32 (30)           ; 66 (33)          ; |WaveTableSynth|adc_proj:comb_3                                                                                                                            ; adc_proj        ; work         ;
+;       |codec_prgm:inst2|                        ; 46 (46)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 1 (1)             ; 17 (17)          ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2                                                                                                           ; codec_prgm      ; work         ;
+;       |data_setup:inst1|                        ; 29 (29)     ; 17 (17)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 1 (1)             ; 22 (22)          ; |WaveTableSynth|adc_proj:comb_3|data_setup:inst1                                                                                                           ; data_setup      ; work         ;
+;    |kbd:keyboard_inst|                          ; 83 (83)     ; 47 (47)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 36 (36)      ; 10 (10)           ; 37 (37)          ; |WaveTableSynth|kbd:keyboard_inst                                                                                                                          ; kbd             ; work         ;
++-------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1311,269 +1322,549 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debug[5]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; debug[6]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; debug[7]    ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; AUD_BCLK    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; AUD_DACLRCK ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; SDAT        ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; ar          ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; clk_50      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; AUD_BCLK    ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
+; AUD_DACLRCK ; Input    ; (0) 0 ps      ; (0) 0 ps      ; --                    ; --  ; --   ;
 ; ps2_dat     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; ps2_clk     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+----------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                         ;
-+----------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                      ; Pad To Core Index ; Setting ;
-+----------------------------------------------------------+-------------------+---------+
-; AUD_ADCDAT                                               ;                   ;         ;
-; AUD_ADCLRCK                                              ;                   ;         ;
-; bitcrush                                                 ;                   ;         ;
-; AUD_BCLK                                                 ;                   ;         ;
-; AUD_DACLRCK                                              ;                   ;         ;
-; SDAT                                                     ;                   ;         ;
-; ar                                                       ;                   ;         ;
-;      - kbd:keyboard_inst|bitmask[0]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[1]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[2]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[3]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[4]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[5]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[6]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[7]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[8]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[9]                      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[10]                     ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[11]                     ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[12]                     ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[13]                     ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[14]                     ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bitmask[15]                     ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[2]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[3]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[0]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[1]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[4]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[9]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|counter[5]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[1]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[10]     ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[8]      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bit_count[3]                    ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[7]      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bit_count[2]                    ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[6]      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bit_count[1]                    ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[5]      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|bit_count[0]                    ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[4]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[3]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[2]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|sclk_enable     ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[2]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[1]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[0]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[5]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[4]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|address[3]      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|done            ; 1                 ; 6       ;
-;      - adc_proj:comb_11|data_setup:inst1|counter[0]      ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|currently_receiving             ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[7]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[5]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[3]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[1]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[4]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[6]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[0]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|code[2]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|ps2_clk_filt                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|received_stop~0                 ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[5]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[3]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[0]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[4]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[2]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[7]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[6]                    ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|filter_sr[1]                    ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|bit_sent        ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|ack_enable      ; 1                 ; 6       ;
-;      - adc_proj:comb_11|codec_prgm:inst2|data_sent[12]~0 ; 1                 ; 6       ;
-; clk_50                                                   ;                   ;         ;
-; ps2_dat                                                  ;                   ;         ;
-;      - kbd:keyboard_inst|code[7]                         ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|currently_receiving~0           ; 1                 ; 6       ;
-;      - kbd:keyboard_inst|always1~0                       ; 1                 ; 6       ;
-; ps2_clk                                                  ;                   ;         ;
-;      - kbd:keyboard_inst|filter_sr[7]~0                  ; 0                 ; 6       ;
-+----------------------------------------------------------+-------------------+---------+
++---------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                        ;
++---------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                     ; Pad To Core Index ; Setting ;
++---------------------------------------------------------+-------------------+---------+
+; AUD_ADCDAT                                              ;                   ;         ;
+; AUD_ADCLRCK                                             ;                   ;         ;
+; bitcrush                                                ;                   ;         ;
+; SDAT                                                    ;                   ;         ;
+; ar                                                      ;                   ;         ;
+;      - kbd:keyboard_inst|bitmask[0]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[1]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[2]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[3]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[4]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[5]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[6]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[7]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[8]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[9]                     ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[10]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[11]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[12]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[13]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[14]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bitmask[15]                    ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|RD                      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[30]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[2]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[3]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[0]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[1]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[4]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[9]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|counter[5]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[1]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[10]     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[8]      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bit_count[3]                   ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[7]      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bit_count[2]                   ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[6]      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bit_count[1]                   ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[0]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[1]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[2]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[3]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[4]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[5]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[6]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[7]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[8]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[9]         ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[10]        ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[11]        ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|wavePosition[12]        ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[5]      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|bit_count[0]                   ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[4]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[3]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[2]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|sclk_enable     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[2]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[1]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[0]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[5]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[4]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|address[3]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|done            ; 1                 ; 6       ;
+;      - adc_proj:comb_3|data_setup:inst1|counter[0]      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[29]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|currently_receiving            ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[7]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[5]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[3]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[1]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[4]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[6]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[0]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|code[2]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|ps2_clk_filt                   ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|daclrck_prev            ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[28]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|received_stop~0                ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[5]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[3]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[0]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[4]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[2]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[7]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[6]                   ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|filter_sr[1]                   ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|bit_sent        ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|ack_enable      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[27]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|select[0]                      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|select[1]                      ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[26]                    ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|plus_prev                      ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|minus_prev                     ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[0]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[1]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[2]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[3]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[4]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[5]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[6]                ; 1                 ; 6       ;
+;      - WaveTable:waveTable_inst|scale[7]                ; 1                 ; 6       ;
+;      - adc_proj:comb_3|codec_prgm:inst2|data_sent[12]~0 ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[25]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[24]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[23]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[22]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[21]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[20]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[19]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[18]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[17]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[16]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[15]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[14]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[13]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[12]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[11]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[10]                    ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[9]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[8]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[7]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[6]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[5]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[4]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[3]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[2]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[1]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dacout_sr[0]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[31]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[31]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[30]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[30]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[29]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[29]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[28]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[28]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[27]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[27]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[26]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[26]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[25]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[25]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[24]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[24]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[23]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[23]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[22]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[22]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[21]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[21]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[20]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[20]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[19]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[19]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[18]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[18]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[17]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[17]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_ldat[16]                     ; 1                 ; 6       ;
+;      - adc_proj:comb_3|dac_rdat[16]                     ; 1                 ; 6       ;
+; clk_50                                                  ;                   ;         ;
+; AUD_BCLK                                                ;                   ;         ;
+;      - WaveTable:waveTable_inst|RD                      ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[29]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[30]                    ; 1                 ; 0       ;
+;      - WaveTable:waveTable_inst|daclrck_prev            ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[28]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[27]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[26]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[25]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[24]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[23]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[22]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[21]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[20]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[19]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[18]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[17]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[16]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[15]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[14]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[13]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[12]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[11]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[10]                    ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[9]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[8]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[7]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[6]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[5]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[4]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[3]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[2]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[1]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dacout_sr[0]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[31]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[31]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[30]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[30]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[29]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[29]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[28]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[28]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[27]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[27]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[26]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[26]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[25]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[25]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[24]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[24]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[23]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[23]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[22]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[22]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[21]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[21]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[20]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[20]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[19]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[19]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[18]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[18]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[17]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[17]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[16]                     ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[16]                     ; 1                 ; 0       ;
+; AUD_DACLRCK                                             ;                   ;         ;
+;      - adc_proj:comb_3|ldat_ldclr                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[31]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[31]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dacbit~0                         ; 1                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[30]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~0                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[30]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~0                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[29]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~1                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[29]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~1                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[28]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~2                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[28]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~2                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[27]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~3                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[27]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~3                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[26]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~4                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[26]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~4                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[25]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~5                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[25]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~5                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[24]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~6                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[24]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~6                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[23]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~7                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[23]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~7                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[22]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~8                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[22]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~8                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[21]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~9                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[21]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~9                       ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[20]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~10                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[20]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~10                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[19]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~11                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[19]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~11                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[18]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~12                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[18]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~12                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat[17]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~13                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat[17]                     ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~13                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~14                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~14                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_ldat~15                      ; 0                 ; 0       ;
+;      - adc_proj:comb_3|dac_rdat~15                      ; 0                 ; 0       ;
+;      - WaveTable:waveTable_inst|daclrck_prev~feeder     ; 0                 ; 0       ;
+; ps2_dat                                                 ;                   ;         ;
+;      - kbd:keyboard_inst|code[7]                        ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|currently_receiving~0          ; 1                 ; 6       ;
+;      - kbd:keyboard_inst|always1~0                      ; 1                 ; 6       ;
+; ps2_clk                                                 ;                   ;         ;
+;      - kbd:keyboard_inst|filter_sr[7]~0                 ; 0                 ; 6       ;
++---------------------------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                 ;
-+---------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Name                                              ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; adc_proj:comb_11|codec_prgm:inst2|ack_enable      ; FF_X45_Y69_N11     ; 2       ; Output enable ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[5]      ; FF_X47_Y69_N21     ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[5]~12   ; LCCOMB_X47_Y69_N8  ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|codec_prgm:inst2|data_sent[12]~1 ; LCCOMB_X46_Y69_N26 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|codec_prgm:inst2|done            ; FF_X55_Y69_N27     ; 6       ; Clock         ; yes    ; Global Clock         ; GCLK11           ; --                        ;
-; adc_proj:comb_11|data_setup:inst1|LessThan0~4     ; LCCOMB_X48_Y69_N28 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|data_setup:inst1|activate~0      ; LCCOMB_X48_Y69_N26 ; 7       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; adc_proj:comb_11|data_setup:inst1|counter[9]      ; FF_X49_Y69_N25     ; 18      ; Clock         ; yes    ; Global Clock         ; GCLK13           ; --                        ;
-; ar                                                ; PIN_M23            ; 67      ; Async. clear  ; no     ; --                   ; --               ; --                        ;
-; clk_50                                            ; PIN_Y2             ; 20      ; Clock         ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; kbd:keyboard_inst|always1~0                       ; LCCOMB_X66_Y70_N16 ; 4       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; kbd:keyboard_inst|code[7]~0                       ; LCCOMB_X67_Y70_N8  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; kbd:keyboard_inst|ps2_clk_filt                    ; FF_X1_Y44_N27      ; 30      ; Clock         ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-+---------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                                                                                                        ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
+; AUD_BCLK                                                                                                                                                    ; PIN_F2             ; 65      ; Clock         ; no     ; --                   ; --               ; --                        ;
+; AUD_DACLRCK                                                                                                                                                 ; PIN_E3             ; 66      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; AUD_DACLRCK                                                                                                                                                 ; PIN_E3             ; 13      ; Clock         ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|Rd_A[13]~0                                                                                                         ; LCCOMB_X55_Y52_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.RdDone                                                                                                          ; FF_X45_Y58_N27     ; 17      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b|w_anode600w[2]   ; LCCOMB_X55_Y52_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b|w_anode623w[2]~0 ; LCCOMB_X55_Y52_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b|w_anode623w[2]~1 ; LCCOMB_X55_Y52_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b|w_anode623w[2]~2 ; LCCOMB_X55_Y52_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|ack_enable                                                                                                                 ; FF_X49_Y69_N3      ; 2       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[4]~12                                                                                                              ; LCCOMB_X54_Y69_N24 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[5]                                                                                                                 ; FF_X54_Y69_N23     ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|data_sent[12]~1                                                                                                            ; LCCOMB_X50_Y69_N14 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|done                                                                                                                       ; FF_X55_Y69_N11     ; 6       ; Clock         ; yes    ; Global Clock         ; GCLK12           ; --                        ;
+; adc_proj:comb_3|data_setup:inst1|LessThan0~4                                                                                                                ; LCCOMB_X53_Y69_N26 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|data_setup:inst1|activate~0                                                                                                                 ; LCCOMB_X54_Y69_N10 ; 7       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; adc_proj:comb_3|data_setup:inst1|counter[9]                                                                                                                 ; FF_X55_Y69_N29     ; 18      ; Clock         ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; ar                                                                                                                                                          ; PIN_M23            ; 157     ; Async. clear  ; no     ; --                   ; --               ; --                        ;
+; clk_50                                                                                                                                                      ; PIN_Y2             ; 135     ; Clock         ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; kbd:keyboard_inst|WideOr4~3                                                                                                                                 ; LCCOMB_X56_Y49_N28 ; 21      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; kbd:keyboard_inst|always1~0                                                                                                                                 ; LCCOMB_X61_Y49_N26 ; 4       ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; kbd:keyboard_inst|code[7]~0                                                                                                                                 ; LCCOMB_X61_Y49_N4  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; kbd:keyboard_inst|keyval[3]~2                                                                                                                               ; LCCOMB_X59_Y49_N2  ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; kbd:keyboard_inst|ps2_clk_filt                                                                                                                              ; FF_X54_Y49_N5      ; 34      ; Clock         ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; kbd:keyboard_inst|select~0                                                                                                                                  ; LCCOMB_X54_Y49_N2  ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                          ;
-+----------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                         ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; adc_proj:comb_11|codec_prgm:inst2|done       ; FF_X55_Y69_N27 ; 6       ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
-; adc_proj:comb_11|data_setup:inst1|counter[9] ; FF_X49_Y69_N25 ; 18      ; 0                                    ; Global Clock         ; GCLK13           ; --                        ;
-; clk_50                                       ; PIN_Y2         ; 20      ; 1                                    ; Global Clock         ; GCLK4            ; --                        ;
-; kbd:keyboard_inst|ps2_clk_filt               ; FF_X1_Y44_N27  ; 30      ; 14                                   ; Global Clock         ; GCLK1            ; --                        ;
-+----------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                         ;
++---------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                        ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; AUD_DACLRCK                                 ; PIN_E3         ; 13      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
+; adc_proj:comb_3|codec_prgm:inst2|done       ; FF_X55_Y69_N11 ; 6       ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
+; adc_proj:comb_3|data_setup:inst1|counter[9] ; FF_X55_Y69_N29 ; 18      ; 1                                    ; Global Clock         ; GCLK10           ; --                        ;
+; clk_50                                      ; PIN_Y2         ; 135     ; 6                                    ; Global Clock         ; GCLK4            ; --                        ;
+; kbd:keyboard_inst|ps2_clk_filt              ; FF_X54_Y49_N5  ; 34      ; 4                                    ; Global Clock         ; GCLK13           ; --                        ;
++---------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------+
-; Routing Usage Summary                           ;
-+-----------------------+-------------------------+
-; Routing Resource Type ; Usage                   ;
-+-----------------------+-------------------------+
-; Block interconnects   ; 168 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 5 / 10,120 ( < 1 % )    ;
-; C4 interconnects      ; 58 / 209,544 ( < 1 % )  ;
-; Direct links          ; 52 / 342,891 ( < 1 % )  ;
-; Global clocks         ; 4 / 20 ( 20 % )         ;
-; Local interconnects   ; 101 / 119,088 ( < 1 % ) ;
-; R24 interconnects     ; 24 / 9,963 ( < 1 % )    ;
-; R4 interconnects      ; 142 / 289,782 ( < 1 % ) ;
-+-----------------------+-------------------------+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++------+--------------------------+
+; Name ; Fan-Out                  ;
++------+--------------------------+
+; ~GND ; 896                      ;
++------+--------------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Logic Elements                                                         ;
-+---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.75) ; Number of LABs  (Total = 12) ;
-+---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 2                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 4                            ;
-+---------------------------------------------+------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; Name                                                                                                                         ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size   ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 32768        ; 16           ; 32768        ; 16           ; yes                    ; no                      ; yes                    ; yes                     ; 524288 ; 32768                       ; 16                          ; 32768                       ; 16                          ; 524288              ; 64   ; None ; M9K_X64_Y58_N0, M9K_X51_Y55_N0, M9K_X51_Y58_N0, M9K_X51_Y45_N0, M9K_X64_Y54_N0, M9K_X51_Y50_N0, M9K_X51_Y54_N0, M9K_X64_Y52_N0, M9K_X37_Y47_N0, M9K_X64_Y63_N0, M9K_X37_Y52_N0, M9K_X64_Y46_N0, M9K_X37_Y53_N0, M9K_X37_Y45_N0, M9K_X37_Y65_N0, M9K_X51_Y66_N0, M9K_X37_Y59_N0, M9K_X64_Y61_N0, M9K_X37_Y58_N0, M9K_X64_Y65_N0, M9K_X37_Y55_N0, M9K_X37_Y46_N0, M9K_X64_Y62_N0, M9K_X37_Y66_N0, M9K_X51_Y44_N0, M9K_X51_Y61_N0, M9K_X51_Y56_N0, M9K_X51_Y49_N0, M9K_X37_Y54_N0, M9K_X51_Y60_N0, M9K_X37_Y60_N0, M9K_X37_Y48_N0, M9K_X37_Y49_N0, M9K_X37_Y51_N0, M9K_X51_Y65_N0, M9K_X64_Y66_N0, M9K_X64_Y57_N0, M9K_X37_Y61_N0, M9K_X37_Y64_N0, M9K_X37_Y63_N0, M9K_X37_Y44_N0, M9K_X51_Y62_N0, M9K_X51_Y63_N0, M9K_X37_Y50_N0, M9K_X64_Y51_N0, M9K_X37_Y62_N0, M9K_X37_Y56_N0, M9K_X37_Y57_N0, M9K_X51_Y51_N0, M9K_X64_Y60_N0, M9K_X51_Y52_N0, M9K_X64_Y55_N0, M9K_X64_Y59_N0, M9K_X51_Y46_N0, M9K_X51_Y64_N0, M9K_X64_Y49_N0, M9K_X51_Y48_N0, M9K_X64_Y56_N0, M9K_X51_Y53_N0, M9K_X51_Y59_N0, M9K_X64_Y53_N0, M9K_X51_Y47_N0, M9K_X51_Y57_N0, M9K_X64_Y50_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+--------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
+
+
++---------------------------------------------------+
+; Routing Usage Summary                             ;
++-----------------------+---------------------------+
+; Routing Resource Type ; Usage                     ;
++-----------------------+---------------------------+
+; Block interconnects   ; 1,485 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 87 / 10,120 ( < 1 % )     ;
+; C4 interconnects      ; 676 / 209,544 ( < 1 % )   ;
+; Direct links          ; 65 / 342,891 ( < 1 % )    ;
+; Global clocks         ; 5 / 20 ( 25 % )           ;
+; Local interconnects   ; 210 / 119,088 ( < 1 % )   ;
+; R24 interconnects     ; 132 / 9,963 ( 1 % )       ;
+; R4 interconnects      ; 893 / 289,782 ( < 1 % )   ;
++-----------------------+---------------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 8.88) ; Number of LABs  (Total = 34) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 5                            ;
+; 2                                          ; 5                            ;
+; 3                                          ; 0                            ;
+; 4                                          ; 1                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 1                            ;
+; 7                                          ; 3                            ;
+; 8                                          ; 2                            ;
+; 9                                          ; 0                            ;
+; 10                                         ; 3                            ;
+; 11                                         ; 1                            ;
+; 12                                         ; 1                            ;
+; 13                                         ; 0                            ;
+; 14                                         ; 1                            ;
+; 15                                         ; 3                            ;
+; 16                                         ; 8                            ;
++--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.08) ; Number of LABs  (Total = 12) ;
+; LAB-wide Signals  (Average = 1.79) ; Number of LABs  (Total = 34) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 10                           ;
-; 1 Clock                            ; 12                           ;
-; 1 Clock enable                     ; 1                            ;
-; 1 Sync. clear                      ; 1                            ;
-; 2 Clock enables                    ; 1                            ;
+; 1 Async. clear                     ; 20                           ;
+; 1 Clock                            ; 24                           ;
+; 1 Clock enable                     ; 8                            ;
+; 2 Clock enables                    ; 3                            ;
+; 2 Clocks                           ; 6                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.83) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced  (Average = 14.94) ; Number of LABs  (Total = 34) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
+; 1                                            ; 4                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
+; 3                                            ; 4                            ;
+; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 1                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 3                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 0                            ;
 ; 17                                           ; 1                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 2                            ;
 ; 22                                           ; 1                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 2                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 1                            ;
+; 32                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 5.17) ; Number of LABs  (Total = 12) ;
+; Number of Signals Sourced Out  (Average = 4.88) ; Number of LABs  (Total = 34) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 2                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 0                            ;
+; 1                                               ; 12                           ;
+; 2                                               ; 4                            ;
+; 3                                               ; 2                            ;
+; 4                                               ; 5                            ;
 ; 5                                               ; 1                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 0                            ;
+; 6                                               ; 1                            ;
+; 7                                               ; 2                            ;
 ; 8                                               ; 0                            ;
-; 9                                               ; 2                            ;
-; 10                                              ; 0                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 2                            ;
 ; 11                                              ; 0                            ;
 ; 12                                              ; 0                            ;
 ; 13                                              ; 0                            ;
 ; 14                                              ; 1                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 0                            ;
+; 17                                              ; 1                            ;
+; 18                                              ; 0                            ;
+; 19                                              ; 0                            ;
+; 20                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 7.67) ; Number of LABs  (Total = 12) ;
+; Number of Distinct Inputs  (Average = 9.03) ; Number of LABs  (Total = 34) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 2                            ;
-; 4                                           ; 2                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 4                            ;
+; 4                                           ; 5                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 1                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
+; 7                                           ; 3                            ;
+; 8                                           ; 5                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 1                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 2                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 1                            ;
+; 18                                          ; 1                            ;
+; 19                                          ; 2                            ;
+; 20                                          ; 0                            ;
+; 21                                          ; 0                            ;
+; 22                                          ; 0                            ;
+; 23                                          ; 1                            ;
+; 24                                          ; 0                            ;
+; 25                                          ; 0                            ;
+; 26                                          ; 0                            ;
+; 27                                          ; 0                            ;
+; 28                                          ; 0                            ;
+; 29                                          ; 0                            ;
+; 30                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1668,11 +1959,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; debug[5]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; debug[6]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; debug[7]           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; AUD_BCLK           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; AUD_DACLRCK        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SDAT               ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass         ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ar                 ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk_50             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; AUD_BCLK           ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; AUD_DACLRCK        ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ps2_dat            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ps2_clk            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
@@ -1714,51 +2005,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                                                                                 ;
-+--------------------------------------------------------------------------------------------+----------------------------------------------+-------------------+
-; Source Clock(s)                                                                            ; Destination Clock(s)                         ; Delay Added in ns ;
-+--------------------------------------------------------------------------------------------+----------------------------------------------+-------------------+
-; clk_50                                                                                     ; clk_50                                       ; 12.8              ;
-; adc_proj:comb_11|codec_prgm:inst2|done                                                     ; adc_proj:comb_11|data_setup:inst1|counter[9] ; 11.3              ;
-; adc_proj:comb_11|data_setup:inst1|counter[9]                                               ; adc_proj:comb_11|data_setup:inst1|counter[9] ; 5.7               ;
-; adc_proj:comb_11|data_setup:inst1|counter[9],clk_50,adc_proj:comb_11|codec_prgm:inst2|done ; adc_proj:comb_11|data_setup:inst1|counter[9] ; 2.6               ;
-+--------------------------------------------------------------------------------------------+----------------------------------------------+-------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                                                              ;
++------------------------------------------------------------------------------------------+---------------------------------------------+-------------------+
+; Source Clock(s)                                                                          ; Destination Clock(s)                        ; Delay Added in ns ;
++------------------------------------------------------------------------------------------+---------------------------------------------+-------------------+
+; I/O                                                                                      ; AUD_BCLK                                    ; 79.3              ;
+; clk_50                                                                                   ; clk_50                                      ; 11.4              ;
+; adc_proj:comb_3|data_setup:inst1|counter[9]                                              ; adc_proj:comb_3|data_setup:inst1|counter[9] ; 4.6               ;
+; adc_proj:comb_3|data_setup:inst1|counter[9],clk_50,adc_proj:comb_3|codec_prgm:inst2|done ; adc_proj:comb_3|data_setup:inst1|counter[9] ; 2.2               ;
++------------------------------------------------------------------------------------------+---------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                     ;
-+-----------------------------------------------+-----------------------------------------------+-------------------+
-; Source Register                               ; Destination Register                          ; Delay Added in ns ;
-+-----------------------------------------------+-----------------------------------------------+-------------------+
-; adc_proj:comb_11|codec_prgm:inst2|done        ; adc_proj:comb_11|codec_prgm:inst2|done        ; 4.322             ;
-; adc_proj:comb_11|data_setup:inst1|counter[9]  ; adc_proj:comb_11|data_setup:inst1|counter[10] ; 4.003             ;
-; kbd:keyboard_inst|ps2_clk_filt                ; kbd:keyboard_inst|ps2_clk_filt                ; 3.859             ;
-; kbd:keyboard_inst|filter_sr[5]                ; kbd:keyboard_inst|ps2_clk_filt                ; 2.040             ;
-; kbd:keyboard_inst|filter_sr[4]                ; kbd:keyboard_inst|ps2_clk_filt                ; 2.040             ;
-; kbd:keyboard_inst|filter_sr[2]                ; kbd:keyboard_inst|ps2_clk_filt                ; 2.040             ;
-; kbd:keyboard_inst|filter_sr[7]                ; kbd:keyboard_inst|ps2_clk_filt                ; 1.913             ;
-; kbd:keyboard_inst|filter_sr[6]                ; kbd:keyboard_inst|ps2_clk_filt                ; 1.913             ;
-; kbd:keyboard_inst|filter_sr[1]                ; kbd:keyboard_inst|ps2_clk_filt                ; 1.913             ;
-; adc_proj:comb_11|data_setup:inst1|counter[10] ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[2]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[4]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[0]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[1]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[5]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|data_setup:inst1|address[3]  ; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; 1.555             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[4]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[3]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[0]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[5]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[1]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; adc_proj:comb_11|codec_prgm:inst2|counter[2]  ; adc_proj:comb_11|codec_prgm:inst2|done        ; 1.518             ;
-; kbd:keyboard_inst|filter_sr[0]                ; kbd:keyboard_inst|ps2_clk_filt                ; 1.105             ;
-; kbd:keyboard_inst|filter_sr[3]                ; kbd:keyboard_inst|ps2_clk_filt                ; 1.105             ;
-+-----------------------------------------------+-----------------------------------------------+-------------------+
-Note: This table only shows the top 24 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                   ;
++----------------------------------------------+----------------------------------------------+-------------------+
+; Source Register                              ; Destination Register                         ; Delay Added in ns ;
++----------------------------------------------+----------------------------------------------+-------------------+
+; adc_proj:comb_3|data_setup:inst1|counter[9]  ; adc_proj:comb_3|data_setup:inst1|counter[10] ; 4.003             ;
+; kbd:keyboard_inst|ps2_clk_filt               ; kbd:keyboard_inst|ps2_clk_filt               ; 3.458             ;
+; adc_proj:comb_3|codec_prgm:inst2|done        ; adc_proj:comb_3|codec_prgm:inst2|done        ; 2.995             ;
+; AUD_DACLRCK                                  ; adc_proj:comb_3|dac_ldat[16]                 ; 2.273             ;
+; kbd:keyboard_inst|filter_sr[5]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.220             ;
+; kbd:keyboard_inst|filter_sr[4]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.220             ;
+; kbd:keyboard_inst|filter_sr[2]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.220             ;
+; kbd:keyboard_inst|filter_sr[7]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.149             ;
+; kbd:keyboard_inst|filter_sr[6]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.149             ;
+; kbd:keyboard_inst|filter_sr[1]               ; kbd:keyboard_inst|ps2_clk_filt               ; 2.149             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[4]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[3]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[0]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[5]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|codec_prgm:inst2|counter[2]  ; adc_proj:comb_3|codec_prgm:inst2|done        ; 1.388             ;
+; adc_proj:comb_3|data_setup:inst1|counter[10] ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[2]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[4]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[0]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[1]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[5]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; adc_proj:comb_3|data_setup:inst1|address[3]  ; adc_proj:comb_3|codec_prgm:inst2|counter[1]  ; 1.356             ;
+; kbd:keyboard_inst|filter_sr[0]               ; kbd:keyboard_inst|ps2_clk_filt               ; 1.204             ;
+; kbd:keyboard_inst|filter_sr[3]               ; kbd:keyboard_inst|ps2_clk_filt               ; 1.204             ;
+; adc_proj:comb_3|dac_ldat[31]                 ; adc_proj:comb_3|dacout_sr[0]                 ; 0.894             ;
+; adc_proj:comb_3|dac_rdat[31]                 ; adc_proj:comb_3|dacout_sr[0]                 ; 0.894             ;
+; WaveTable:waveTable_inst|daclrck_prev        ; WaveTable:waveTable_inst|RD                  ; 0.643             ;
+; WaveTable:waveTable_inst|scale[1]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.424             ;
+; WaveTable:waveTable_inst|scale[0]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.409             ;
+; WaveTable:waveTable_inst|scale[7]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.152             ;
+; WaveTable:waveTable_inst|scale[3]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.149             ;
+; WaveTable:waveTable_inst|scale[4]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.147             ;
+; WaveTable:waveTable_inst|scale[6]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.129             ;
+; WaveTable:waveTable_inst|scale[5]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.127             ;
+; WaveTable:waveTable_inst|scale[2]            ; WaveTable:waveTable_inst|wavePosition[11]    ; 0.127             ;
+; AUD_BCLK                                     ; adc_proj:comb_3|dacout_sr[15]                ; 0.121             ;
++----------------------------------------------+----------------------------------------------+-------------------+
+Note: This table only shows the top 37 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1769,6 +2073,8 @@ Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors
 Info (119006): Selected device EP4CE115F29C7 for design "WaveTableSynth"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
+    Info (119043): Atom "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ram_block1a17" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1788,6 +2094,7 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
     Info (169125): Pin ~ALTERA_DATA0~ is reserved at location N7
     Info (169125): Pin ~ALTERA_nCEO~ is reserved at location P28
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'WaveTableSynth.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1795,52 +2102,66 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQue
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk_50~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 5
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node kbd:keyboard_inst|ps2_clk_filt  File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 37
+Info (176353): Automatically promoted node AUD_DACLRCK~input (placed in PIN E3 (DIFFIO_L4p, DQS2L/CQ3L,CDPCLK0)) File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 13
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node WaveTable:waveTable_inst|daclrck_prev File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 103
+        Info (176357): Destination node adc_proj:comb_3|ldat_ldclr File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 52
+        Info (176357): Destination node adc_proj:comb_3|dac_ldat[31] File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 68
+        Info (176357): Destination node adc_proj:comb_3|dac_rdat[31] File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 77
+        Info (176357): Destination node adc_proj:comb_3|dacbit~0 File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 86
+        Info (176357): Destination node adc_proj:comb_3|dac_ldat[30] File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 68
+        Info (176357): Destination node adc_proj:comb_3|dac_ldat~0 File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 50
+        Info (176357): Destination node adc_proj:comb_3|dac_rdat[30] File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 77
+        Info (176357): Destination node adc_proj:comb_3|dac_rdat~0 File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 50
+        Info (176357): Destination node adc_proj:comb_3|dac_ldat[29] File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 68
+        Info (176358): Non-global destination nodes limited to 10 nodes
+Info (176353): Automatically promoted node kbd:keyboard_inst|ps2_clk_filt  File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 33
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~1 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 37
-        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~2 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 37
-        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~3 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 37
-Info (176353): Automatically promoted node adc_proj:comb_11|data_setup:inst1|counter[9]  File: H:/ECE641/WaveTableSynth/data_setup.v Line: 54
+        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~1 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 33
+        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~2 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 33
+        Info (176357): Destination node kbd:keyboard_inst|ps2_clk_filt~3 File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 33
+Info (176353): Automatically promoted node adc_proj:comb_3|data_setup:inst1|counter[9]  File: H:/ECE641/WaveTableSynth/data_setup.v Line: 54
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node adc_proj:comb_11|data_setup:inst1|counter[9]~26 File: H:/ECE641/WaveTableSynth/data_setup.v Line: 54
-        Info (176357): Destination node adc_proj:comb_11|codec_prgm:inst2|SCLK~2 File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 15
-Info (176353): Automatically promoted node adc_proj:comb_11|codec_prgm:inst2|done  File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 16
+        Info (176357): Destination node adc_proj:comb_3|data_setup:inst1|counter[9]~26 File: H:/ECE641/WaveTableSynth/data_setup.v Line: 54
+        Info (176357): Destination node adc_proj:comb_3|codec_prgm:inst2|SCLK~2 File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 15
+Info (176353): Automatically promoted node adc_proj:comb_3|codec_prgm:inst2|done  File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 16
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node adc_proj:comb_11|data_setup:inst1|activate~0 File: H:/ECE641/WaveTableSynth/data_setup.v Line: 16
-        Info (176357): Destination node adc_proj:comb_11|codec_prgm:inst2|done~1 File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 16
+        Info (176357): Destination node adc_proj:comb_3|data_setup:inst1|activate~0 File: H:/ECE641/WaveTableSynth/data_setup.v Line: 16
+        Info (176357): Destination node adc_proj:comb_3|codec_prgm:inst2|done~1 File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 16
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X46_Y61 to location X57_Y73
+    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X46_Y49 to location X57_Y60
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (11888): Total time spent on timing analysis during the Fitter is 0.75 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (169177): 1 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin clk_50 uses I/O standard 3.3-V LVCMOS at Y2 File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 5
 Info (144001): Generated suppressed messages file H:/ECE641/WaveTableSynth/output_files/WaveTableSynth.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1606 megabytes
-    Info: Processing ended: Mon Apr 30 18:03:16 2018
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1628 megabytes
+    Info: Processing ended: Tue May 01 12:28:58 2018
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +----------------------------+

@@ -30,12 +30,12 @@ module WaveTableSynth(
 	wire keyOn; 					// wire between kb to WT; 1 if key pressed, 0 if key released.
 
 	//debug stuff
-    assign debug = {|waveSample,waveSample[6:0]};
+//    assign debug = {|waveSample,waveSample[6:0]};
 
 
 
 	kbd keyboard_inst (.ar(ar), .clk(clk_50), .ps2_clk(ps2_clk), .ps2_dat(ps2_dat), .bitmask(bitmask), .keyval(keyVal), .keyOn(keyOn), .select(waveSelect));
-	WaveTable waveTable_inst (.clk_50(clk_50), .ar(ar), .bclk(BCLK), .daclrck(AUD_DACLRCK), .waveSelect(waveSelect), .keyOn(keyOn), .keyVal(keyVal), .dataOut(waveSample));
+	WaveTable waveTable_inst (.clk_50(clk_50), .ar(ar), .bclk(AUD_BCLK), .daclrck(AUD_DACLRCK), .waveSelect(waveSelect), .keyOn(keyOn), .keyVal(keyVal), .dataOut(waveSample), .debug(debug));
 
 	
 	adc_proj( 

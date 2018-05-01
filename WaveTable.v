@@ -22,9 +22,10 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	wire [15:0] Dout;				//Dout directly from dpram_ctrl.
 	wire [14:0] address; 		//15 bit address.
 	wire Done; 						//Basically never used. Feeds into dpram_ctrl
-	reg [7:0] snapshot;
 
-	assign debug = scale;
+	assign debug = {RD,dataOut[15:9]};
+	//assign debug = {|wavePosition[12:0],wavePosition[6:0]};
+
 										
 	//Lookup table for scale values
 	//These values are rounded to nearest int.								
@@ -41,7 +42,7 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 		assign scaleTable[9] = 8'd124;	//F# 9
 		assign scaleTable[10] = 8'd132;	//G  10
 		assign scaleTable[11] = 8'd139;	//G# 11
-		assign scaleTable[12] = 8'd148; //G# 11
+		assign scaleTable[12] = 8'd148; //A  12
 										
 										
 	/*parameter bit [7:0][12:0]scaleTable=
@@ -100,16 +101,14 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	//This is all to determine when the Left Right Clock
 	//goes high and low for one cycle of the bitclock.
 	reg daclrck_prev;
-	wire lrck_posedge = (daclrck) & (~daclrck_prev);
-	wire lrck_negedge = (~daclrck) & (daclrck_prev);
+	wire lrck_posedge = (daclrck == 1) && (daclrck_prev == 0);
+	wire lrck_negedge = (daclrck == 0) && (daclrck_prev == 1);
 	
 	always@(posedge bclk or negedge ar)
 		if(~ar)
 			daclrck_prev = 1'b0;
 		else
 			daclrck_prev = daclrck;
-	
-			
-dpram_ctrl inst (.clk(clk_50), .A(address), .Din(16'hXXXX), .RD(RD), .WR(1'b0), .Dout(Dout), .Done(Done));
+dpram_ctrl inst (.clk(clk_50), .A(address), .RD(RD), .Din(16'hXXXX),  .WR(1'b0),  .Dout(Dout), .Done(Done));
 			
 endmodule

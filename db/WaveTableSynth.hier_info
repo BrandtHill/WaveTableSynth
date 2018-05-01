@@ -1,12 +1,12 @@
 |WaveTableSynth
 clk_50 => clk_50.IN3
 ar => ar.IN3
-SDAT <> adc_proj:comb_11.SDAT
-SCLK << adc_proj:comb_11.SCLK
-AUD_DACDAT << adc_proj:comb_11.AUD_DACDAT
+SDAT <> adc_proj:comb_3.SDAT
+SCLK << adc_proj:comb_3.SCLK
+AUD_DACDAT << adc_proj:comb_3.AUD_DACDAT
 AUD_ADCDAT => AUD_ADCDAT.IN1
-AUD_XCK << adc_proj:comb_11.AUD_XCK
-AUD_BCLK => AUD_BCLK.IN1
+AUD_XCK << adc_proj:comb_3.AUD_XCK
+AUD_BCLK => AUD_BCLK.IN2
 AUD_DACLRCK => AUD_DACLRCK.IN2
 AUD_ADCLRCK => AUD_ADCLRCK.IN1
 bitcrush => bitcrush.IN1
@@ -28,14 +28,14 @@ bitmask[12] << kbd:keyboard_inst.bitmask
 bitmask[13] << kbd:keyboard_inst.bitmask
 bitmask[14] << kbd:keyboard_inst.bitmask
 bitmask[15] << kbd:keyboard_inst.bitmask
-debug[0] << waveSample[0].DB_MAX_OUTPUT_PORT_TYPE
-debug[1] << waveSample[1].DB_MAX_OUTPUT_PORT_TYPE
-debug[2] << waveSample[2].DB_MAX_OUTPUT_PORT_TYPE
-debug[3] << waveSample[3].DB_MAX_OUTPUT_PORT_TYPE
-debug[4] << waveSample[4].DB_MAX_OUTPUT_PORT_TYPE
-debug[5] << waveSample[5].DB_MAX_OUTPUT_PORT_TYPE
-debug[6] << waveSample[6].DB_MAX_OUTPUT_PORT_TYPE
-debug[7] << WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+debug[0] << WaveTable:waveTable_inst.debug
+debug[1] << WaveTable:waveTable_inst.debug
+debug[2] << WaveTable:waveTable_inst.debug
+debug[3] << WaveTable:waveTable_inst.debug
+debug[4] << WaveTable:waveTable_inst.debug
+debug[5] << WaveTable:waveTable_inst.debug
+debug[6] << WaveTable:waveTable_inst.debug
+debug[7] << WaveTable:waveTable_inst.debug
 
 
 |WaveTableSynth|kbd:keyboard_inst
@@ -100,9 +100,7 @@ clk => filter_sr[6].CLK
 clk => filter_sr[7].CLK
 clk => ps2_clk_filt.CLK
 ps2_clk => filter_sr[7].DATAIN
-ps2_clk => psclk.DATAIN
 ps2_dat => code.DATAB
-ps2_dat => psdat.DATAIN
 ps2_dat => always1.IN1
 bitmask[0] <= bitmask[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 bitmask[1] <= bitmask[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -127,8 +125,6 @@ keyval[3] <= keyval[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 keyOn <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 select[0] <= select[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 select[1] <= select[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-psclk <= ps2_clk.DB_MAX_OUTPUT_PORT_TYPE
-psdat <= ps2_dat.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WaveTableSynth|WaveTable:waveTable_inst
@@ -146,6 +142,7 @@ ar => wavePosition[9].ACLR
 ar => wavePosition[10].ACLR
 ar => wavePosition[11].ACLR
 ar => wavePosition[12].ACLR
+ar => RD.ACLR
 ar => scale[0].ACLR
 ar => scale[1].ACLR
 ar => scale[2].ACLR
@@ -155,7 +152,6 @@ ar => scale[5].ACLR
 ar => scale[6].ACLR
 ar => scale[7].ACLR
 ar => daclrck_prev.ACLR
-ar => RD.ACLR
 bclk => daclrck_prev.CLK
 bclk => RD.CLK
 daclrck => lrck_posedge.IN1
@@ -244,14 +240,14 @@ dataOut[12] <= dpram_ctrl:inst.Dout
 dataOut[13] <= dpram_ctrl:inst.Dout
 dataOut[14] <= dpram_ctrl:inst.Dout
 dataOut[15] <= dpram_ctrl:inst.Dout
-debug[0] <= scale[0].DB_MAX_OUTPUT_PORT_TYPE
-debug[1] <= scale[1].DB_MAX_OUTPUT_PORT_TYPE
-debug[2] <= scale[2].DB_MAX_OUTPUT_PORT_TYPE
-debug[3] <= scale[3].DB_MAX_OUTPUT_PORT_TYPE
-debug[4] <= scale[4].DB_MAX_OUTPUT_PORT_TYPE
-debug[5] <= scale[5].DB_MAX_OUTPUT_PORT_TYPE
-debug[6] <= scale[6].DB_MAX_OUTPUT_PORT_TYPE
-debug[7] <= scale[7].DB_MAX_OUTPUT_PORT_TYPE
+debug[0] <= dpram_ctrl:inst.Dout
+debug[1] <= dpram_ctrl:inst.Dout
+debug[2] <= dpram_ctrl:inst.Dout
+debug[3] <= dpram_ctrl:inst.Dout
+debug[4] <= dpram_ctrl:inst.Dout
+debug[5] <= dpram_ctrl:inst.Dout
+debug[6] <= dpram_ctrl:inst.Dout
+debug[7] <= RD.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst
@@ -2789,7 +2785,7 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 
 
-|WaveTableSynth|adc_proj:comb_11
+|WaveTableSynth|adc_proj:comb_3
 clk_50 => clk_50.IN1
 ar => ar.IN2
 SDAT <> codec_prgm:inst2.SDAT
@@ -3004,7 +3000,7 @@ bclk <= AUD_BCLK.DB_MAX_OUTPUT_PORT_TYPE
 adclrck <= AUD_ADCLRCK.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|adc_proj:comb_11|data_setup:inst1
+|WaveTableSynth|adc_proj:comb_3|data_setup:inst1
 clk_50 => counter[0].CLK
 clk_50 => counter[1].CLK
 clk_50 => counter[2].CLK
@@ -3069,7 +3065,7 @@ activate <= comb.DB_MAX_OUTPUT_PORT_TYPE
 clk_xck <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|adc_proj:comb_11|codec_prgm:inst2
+|WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2
 ar => ack_enable.ACLR
 ar => sclk_enable.PRESET
 ar => bit_sent.PRESET

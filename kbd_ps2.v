@@ -16,7 +16,7 @@ Special indices:    12: [
                     15: unrecognized
 ==========================================================*/
 
-module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psdat);
+module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select );
 	input	ar;
 	input	clk;
 	input  ps2_clk;
@@ -25,12 +25,8 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select, psclk, psd
 	output reg [3:0] keyval;
 	output keyOn;
 	output reg [1:0] select;
-	output psclk, psdat;
 	
-    // For debugging timing waveforms
-	assign psclk = ps2_clk;
-	assign psdat = ps2_dat;
-	
+ 
 	
 	reg [7:0] code;
   // We need to filter the ps2 clock for edges
