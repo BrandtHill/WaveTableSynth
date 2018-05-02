@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WaveTableSynth
-Tue May 01 23:01:51 2018
+Wed May 02 13:36:34 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -55,15 +55,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 01 23:01:51 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 02 13:36:34 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; WaveTableSynth                              ;
 ; Top-level Entity Name              ; WaveTableSynth                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 319                                         ;
-;     Total combinational functions  ; 248                                         ;
-;     Dedicated logic registers      ; 207                                         ;
-; Total registers                    ; 207                                         ;
+; Total logic elements               ; 362                                         ;
+;     Total combinational functions  ; 292                                         ;
+;     Dedicated logic registers      ; 223                                         ;
+; Total registers                    ; 223                                         ;
 ; Total pins                         ; 37                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 524,288                                     ;
@@ -211,20 +211,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 319      ;
+; Estimated Total logic elements              ; 362      ;
 ;                                             ;          ;
-; Total combinational functions               ; 248      ;
+; Total combinational functions               ; 292      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 161      ;
-;     -- 3 input functions                    ; 34       ;
-;     -- <=2 input functions                  ; 53       ;
+;     -- 4 input functions                    ; 162      ;
+;     -- 3 input functions                    ; 68       ;
+;     -- <=2 input functions                  ; 62       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 215      ;
-;     -- arithmetic mode                      ; 33       ;
+;     -- normal mode                          ; 245      ;
+;     -- arithmetic mode                      ; 47       ;
 ;                                             ;          ;
-; Total registers                             ; 207      ;
-;     -- Dedicated logic registers            ; 207      ;
+; Total registers                             ; 223      ;
+;     -- Dedicated logic registers            ; 223      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 37       ;
@@ -233,9 +233,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; ar~input ;
-; Maximum fan-out                             ; 156      ;
-; Total fan-out                               ; 2619     ;
-; Average fan-out                             ; 4.41     ;
+; Maximum fan-out                             ; 189      ;
+; Total fan-out                               ; 2798     ;
+; Average fan-out                             ; 4.28     ;
 +---------------------------------------------+----------+
 
 
@@ -244,18 +244,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                        ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |WaveTableSynth                                 ; 248 (1)             ; 207 (0)                   ; 524288      ; 0            ; 0       ; 0         ; 37   ; 0            ; |WaveTableSynth                                                                                                                                            ; WaveTableSynth  ; work         ;
-;    |WaveTable:waveTable_inst|                   ; 70 (31)             ; 61 (21)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst                                                                                                                   ; WaveTable       ; work         ;
-;       |dpram_ctrl:inst|                         ; 39 (3)              ; 40 (36)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst                                                                                                   ; dpram_ctrl      ; work         ;
+; |WaveTableSynth                                 ; 292 (1)             ; 223 (0)                   ; 524288      ; 0            ; 0       ; 0         ; 37   ; 0            ; |WaveTableSynth                                                                                                                                            ; WaveTableSynth  ; work         ;
+;    |WaveTable:waveTable_inst|                   ; 134 (96)            ; 94 (55)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst                                                                                                                   ; WaveTable       ; work         ;
+;       |dpram_ctrl:inst|                         ; 38 (2)              ; 39 (35)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst                                                                                                   ; dpram_ctrl      ; work         ;
 ;          |dpram:ram|                            ; 36 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram                                                                                         ; dpram           ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 36 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component                                                         ; altsyncram      ; work         ;
 ;                |altsyncram_edr1:auto_generated| ; 36 (0)              ; 4 (4)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated                          ; altsyncram_edr1 ; work         ;
 ;                   |decode_f8a:rden_decode_b|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a      ; work         ;
 ;                   |mux_lob:mux3|                ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|mux_lob:mux3             ; mux_lob         ; work         ;
-;    |adc_proj:comb_3|                            ; 106 (37)            ; 99 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3                                                                                                                            ; adc_proj        ; work         ;
-;       |codec_prgm:inst2|                        ; 41 (41)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2                                                                                                           ; codec_prgm      ; work         ;
+;    |adc_proj:comb_3|                            ; 84 (18)             ; 82 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3                                                                                                                            ; adc_proj        ; work         ;
+;       |codec_prgm:inst2|                        ; 38 (38)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2                                                                                                           ; codec_prgm      ; work         ;
 ;       |data_setup:inst1|                        ; 28 (28)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|data_setup:inst1                                                                                                           ; data_setup      ; work         ;
-;    |kbd:keyboard_inst|                          ; 71 (71)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|kbd:keyboard_inst                                                                                                                          ; kbd             ; work         ;
+;    |kbd:keyboard_inst|                          ; 73 (73)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|kbd:keyboard_inst                                                                                                                          ; kbd             ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -329,6 +329,7 @@ Encoding Type:  One-Hot
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[13]      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[2,6,14]  ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[14]      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
+; adc_proj:comb_3|AUD_DACLRCK_prev                       ; Merged with WaveTable:waveTable_inst|daclrck_prev            ;
 ; adc_proj:comb_3|dac_ldat[0]                            ; Stuck at GND due to stuck port data_in                       ;
 ; adc_proj:comb_3|dac_rdat[0]                            ; Stuck at GND due to stuck port data_in                       ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0]       ; Stuck at GND due to stuck port data_in                       ;
@@ -361,9 +362,8 @@ Encoding Type:  One-Hot
 ; adc_proj:comb_3|dac_ldat[14]                           ; Stuck at GND due to stuck port data_in                       ;
 ; adc_proj:comb_3|dac_rdat[14]                           ; Stuck at GND due to stuck port data_in                       ;
 ; adc_proj:comb_3|dac_ldat[15]                           ; Stuck at GND due to stuck port data_in                       ;
-; adc_proj:comb_3|dac_rdat[15]                           ; Stuck at GND due to stuck port data_in                       ;
+; adc_proj:comb_3|dac_rdat[15..31]                       ; Stuck at GND due to stuck port data_in                       ;
 ; adc_proj:comb_3|codec_prgm:inst2|data_sent[5,8,13..15] ; Stuck at GND due to stuck port data_in                       ;
-; WaveTable:waveTable_inst|scale[7]                      ; Stuck at GND due to stuck port data_in                       ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~2          ; Lost fanout                                                  ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~3          ; Lost fanout                                                  ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs~4          ; Lost fanout                                                  ;
@@ -374,7 +374,7 @@ Encoding Type:  One-Hot
 ; adc_proj:comb_3|codec_prgm:inst2|data_sent[7]          ; Merged with adc_proj:comb_3|codec_prgm:inst2|data_sent[6]    ;
 ; adc_proj:comb_3|codec_prgm:inst2|data_sent[3]          ; Merged with adc_proj:comb_3|codec_prgm:inst2|data_sent[2]    ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|WE            ; Stuck at GND due to stuck port data_in                       ;
-; Total Number of Removed Registers = 87                 ;                                                              ;
+; Total Number of Removed Registers = 103                ;                                                              ;
 +--------------------------------------------------------+--------------------------------------------------------------+
 
 
@@ -383,6 +383,22 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+---------------------------+-------------------------------------------------------------+
 ; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register                      ;
 +-----------------------------------------------------+---------------------------+-------------------------------------------------------------+
+; adc_proj:comb_3|dac_rdat[0]                         ; Stuck at GND              ; adc_proj:comb_3|dac_rdat[1], adc_proj:comb_3|dac_rdat[2],   ;
+;                                                     ; due to stuck port data_in ; adc_proj:comb_3|dac_rdat[3], adc_proj:comb_3|dac_rdat[4],   ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[5], adc_proj:comb_3|dac_rdat[6],   ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[7], adc_proj:comb_3|dac_rdat[8],   ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[9], adc_proj:comb_3|dac_rdat[10],  ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[11], adc_proj:comb_3|dac_rdat[12], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[13], adc_proj:comb_3|dac_rdat[14], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[15], adc_proj:comb_3|dac_rdat[16], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[17], adc_proj:comb_3|dac_rdat[18], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[19], adc_proj:comb_3|dac_rdat[20], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[21], adc_proj:comb_3|dac_rdat[22], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[23], adc_proj:comb_3|dac_rdat[24], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[25], adc_proj:comb_3|dac_rdat[26], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[27], adc_proj:comb_3|dac_rdat[28], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[29], adc_proj:comb_3|dac_rdat[30], ;
+;                                                     ;                           ; adc_proj:comb_3|dac_rdat[31]                                ;
 ; adc_proj:comb_3|dac_ldat[0]                         ; Stuck at GND              ; adc_proj:comb_3|dac_ldat[1], adc_proj:comb_3|dac_ldat[2],   ;
 ;                                                     ; due to stuck port data_in ; adc_proj:comb_3|dac_ldat[3], adc_proj:comb_3|dac_ldat[4],   ;
 ;                                                     ;                           ; adc_proj:comb_3|dac_ldat[5], adc_proj:comb_3|dac_ldat[6],   ;
@@ -391,14 +407,6 @@ Encoding Type:  One-Hot
 ;                                                     ;                           ; adc_proj:comb_3|dac_ldat[11], adc_proj:comb_3|dac_ldat[12], ;
 ;                                                     ;                           ; adc_proj:comb_3|dac_ldat[13], adc_proj:comb_3|dac_ldat[14], ;
 ;                                                     ;                           ; adc_proj:comb_3|dac_ldat[15]                                ;
-; adc_proj:comb_3|dac_rdat[0]                         ; Stuck at GND              ; adc_proj:comb_3|dac_rdat[1], adc_proj:comb_3|dac_rdat[2],   ;
-;                                                     ; due to stuck port data_in ; adc_proj:comb_3|dac_rdat[3], adc_proj:comb_3|dac_rdat[4],   ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[5], adc_proj:comb_3|dac_rdat[6],   ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[7], adc_proj:comb_3|dac_rdat[8],   ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[9], adc_proj:comb_3|dac_rdat[10],  ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[11], adc_proj:comb_3|dac_rdat[12], ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[13], adc_proj:comb_3|dac_rdat[14], ;
-;                                                     ;                           ; adc_proj:comb_3|dac_rdat[15]                                ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrStart ; Stuck at GND              ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrCont,         ;
 ;                                                     ; due to stuck port data_in ; WaveTable:waveTable_inst|dpram_ctrl:inst|cs.WrDone,         ;
 ;                                                     ;                           ; WaveTable:waveTable_inst|dpram_ctrl:inst|WE                 ;
@@ -410,12 +418,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 207   ;
-; Number of registers using Synchronous Clear  ; 23    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 154   ;
+; Total registers                              ; 223   ;
+; Number of registers using Synchronous Clear  ; 31    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 171   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -434,7 +442,7 @@ Encoding Type:  One-Hot
 ; kbd:keyboard_inst|filter_sr[7]               ; 2       ;
 ; kbd:keyboard_inst|filter_sr[6]               ; 2       ;
 ; kbd:keyboard_inst|filter_sr[1]               ; 2       ;
-; adc_proj:comb_3|codec_prgm:inst2|bit_sent    ; 4       ;
+; adc_proj:comb_3|codec_prgm:inst2|bit_sent    ; 5       ;
 ; Total number of inverted registers = 10      ;         ;
 +----------------------------------------------+---------+
 
@@ -444,9 +452,11 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_ldat[24]                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2|counter[4] ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_rdat[28]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_ldat[28]                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2|counter[5] ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_ldat[20]                ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 72 LEs               ; 0 LEs                  ; Yes        ; |WaveTableSynth|WaveTable:waveTable_inst|scale[7]           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |WaveTableSynth|WaveTable:waveTable_inst|scaleTemp[6]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
@@ -571,22 +581,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------+
-; Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst" ;
-+------------+-------+----------+--------------------------------------+
-; Port       ; Type  ; Severity ; Details                              ;
-+------------+-------+----------+--------------------------------------+
-; Din[11..7] ; Input ; Info     ; Stuck at VCC                         ;
-; Din[3..0]  ; Input ; Info     ; Stuck at VCC                         ;
-; Din[15]    ; Input ; Info     ; Stuck at VCC                         ;
-; Din[14]    ; Input ; Info     ; Stuck at GND                         ;
-; Din[13]    ; Input ; Info     ; Stuck at VCC                         ;
-; Din[12]    ; Input ; Info     ; Stuck at GND                         ;
-; Din[6]     ; Input ; Info     ; Stuck at GND                         ;
-; Din[5]     ; Input ; Info     ; Stuck at VCC                         ;
-; Din[4]     ; Input ; Info     ; Stuck at GND                         ;
-; WR         ; Input ; Info     ; Stuck at GND                         ;
-+------------+-------+----------+--------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst"                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Din[11..7] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Din[3..0]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Din[15]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Din[14]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Din[13]    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Din[12]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Din[6]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Din[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Din[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; WR         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Done       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -595,28 +606,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 207                         ;
-;     CLR               ; 84                          ;
-;     CLR SCLR          ; 17                          ;
+; cycloneiii_ff         ; 223                         ;
+;     CLR               ; 97                          ;
+;     CLR SCLR          ; 25                          ;
+;     CLR SLD           ; 3                           ;
 ;     ENA               ; 43                          ;
-;     ENA CLR           ; 47                          ;
+;     ENA CLR           ; 40                          ;
 ;     ENA CLR SCLR      ; 6                           ;
-;     plain             ; 10                          ;
+;     plain             ; 9                           ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 248                         ;
-;     arith             ; 33                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 10                          ;
-;     normal            ; 215                         ;
+; cycloneiii_lcell_comb ; 292                         ;
+;     arith             ; 47                          ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 245                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 161                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 57                          ;
+;         4 data inputs ; 162                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.08                        ;
+; Average LUT depth     ; 2.18                        ;
 +-----------------------+-----------------------------+
 
 
@@ -635,7 +647,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 01 23:01:38 2018
+    Info: Processing started: Wed May 02 13:36:21 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WaveTableSynth -c WaveTableSynth
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -661,8 +673,8 @@ Info (12128): Elaborating entity "kbd" for hierarchy "kbd:keyboard_inst" File: C
 Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(143): truncated value with size 32 to match size of target (2) File: C:/Users/djbrandt/Desktop/WaveTableSynth/kbd_ps2.v Line: 143
 Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(145): truncated value with size 32 to match size of target (2) File: C:/Users/djbrandt/Desktop/WaveTableSynth/kbd_ps2.v Line: 145
 Info (12128): Elaborating entity "WaveTable" for hierarchy "WaveTable:waveTable_inst" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTableSynth.v Line: 38
-Warning (10036): Verilog HDL or VHDL warning at WaveTable.v(100): object "lrck_negedge" assigned a value but never read File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 100
-Info (12128): Elaborating entity "dpram_ctrl" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 107
+Warning (10036): Verilog HDL or VHDL warning at WaveTable.v(117): object "lrck_negedge" assigned a value but never read File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 117
+Info (12128): Elaborating entity "dpram_ctrl" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 125
 Info (12128): Elaborating entity "dpram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram" File: C:/Users/djbrandt/Desktop/WaveTableSynth/dpram_ctrl.v Line: 89
 Info (12128): Elaborating entity "altsyncram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: C:/Users/djbrandt/Desktop/WaveTableSynth/dpram.v Line: 88
 Info (12130): Elaborated megafunction instantiation "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: C:/Users/djbrandt/Desktop/WaveTableSynth/dpram.v Line: 88
@@ -700,11 +712,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_lob File: C:/Users/djbrandt/Desktop/WaveTableSynth/db/mux_lob.tdf Line: 22
 Info (12128): Elaborating entity "mux_lob" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|mux_lob:mux3" File: C:/Users/djbrandt/Desktop/WaveTableSynth/db/altsyncram_edr1.tdf Line: 48
 Info (12128): Elaborating entity "adc_proj" for hierarchy "adc_proj:comb_3" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTableSynth.v Line: 54
+Warning (10036): Verilog HDL or VHDL warning at adc_proj.v(50): object "ldata" assigned a value but never read File: C:/Users/djbrandt/Desktop/WaveTableSynth/adc_proj.v Line: 50
 Info (12128): Elaborating entity "data_setup" for hierarchy "adc_proj:comb_3|data_setup:inst1" File: C:/Users/djbrandt/Desktop/WaveTableSynth/adc_proj.v Line: 45
 Info (12128): Elaborating entity "codec_prgm" for hierarchy "adc_proj:comb_3|codec_prgm:inst2" File: C:/Users/djbrandt/Desktop/WaveTableSynth/adc_proj.v Line: 48
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: C:/Users/djbrandt/Desktop/WaveTableSynth/codec_prgm.v Line: 21
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[0]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[0]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[0]~1" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[1]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[1]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[1]~5" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[2]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[2]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[2]~9" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[3]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[3]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[3]~13" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[4]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[4]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[4]~17" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[5]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[5]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[5]~21" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[6]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[6]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[6]~25" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
+    Warning (13310): Register "WaveTable:waveTable_inst|scaleTemp[7]" is converted into an equivalent circuit using register "WaveTable:waveTable_inst|scaleTemp[7]~_emulated" and latch "WaveTable:waveTable_inst|scaleTemp[7]~29" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTable.v Line: 87
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -712,16 +734,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTableSynth.v Line: 10
     Warning (15610): No output dependent on input pin "AUD_ADCLRCK" File: C:/Users/djbrandt/Desktop/WaveTableSynth/WaveTableSynth.v Line: 14
-Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 470 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 325 logic cells
+    Info (21061): Implemented 369 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 672 megabytes
-    Info: Processing ended: Tue May 01 23:01:52 2018
-    Info: Elapsed time: 00:00:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 673 megabytes
+    Info: Processing ended: Wed May 02 13:36:34 2018
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:24
 
 
