@@ -66,7 +66,7 @@ always @(posedge bclk or negedge ar)
 		dac_ldat = 32'b0;
 	else
 		if(ldat_ldclr) // pos edge of LRC  
-			dac_ldat = {Din,16'h0};
+			dac_ldat = (bitcrush) ? {Din[15:12], 28'b0} :{Din,16'h0};
 		else if (AUD_DACLRCK == 1'b1)
 			dac_ldat = {dac_ldat[30:0], 1'b0};
 
@@ -75,7 +75,7 @@ always @(posedge bclk or negedge ar)
 		dac_rdat = 32'b0;
 	else
 		if(rdat_ldclr) // neg edge of LRC
-			dac_rdat = {Din,16'h0};
+			dac_rdat = (bitcrush) ? {Din[15:12],28'b0} : {Din,16'h0};
 		else if (AUD_DACLRCK == 1'b0)
 			dac_rdat = {dac_rdat[30:0], 1'b0};		
 			

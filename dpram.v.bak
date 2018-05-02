@@ -93,9 +93,9 @@ module dpram (
 		altsyncram_component.clock_enable_input_b = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
 `ifdef NO_PLI
-		altsyncram_component.init_file = "AllWaves.mif"
+		altsyncram_component.init_file = "AllWaves.hex"
 `else
-		altsyncram_component.init_file = "AllWaves.mif"
+		altsyncram_component.init_file = "AllWaves.hex"
 `endif
 ,
 		altsyncram_component.intended_device_family = "Cyclone IV E",

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WaveTableSynth
-Tue May 01 12:28:22 2018
+Tue May 01 20:55:59 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -21,7 +21,7 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  13. General Register Statistics
  14. Inverted Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated
+ 16. Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated
  17. Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst
  18. Parameter Settings for User Entity Instance: WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component
  19. altsyncram Parameter Settings by Entity Instance
@@ -55,15 +55,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 01 12:28:21 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 01 20:55:59 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; WaveTableSynth                              ;
 ; Top-level Entity Name              ; WaveTableSynth                              ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 310                                         ;
-;     Total combinational functions  ; 240                                         ;
-;     Dedicated logic registers      ; 207                                         ;
-; Total registers                    ; 207                                         ;
+; Total logic elements               ; 321                                         ;
+;     Total combinational functions  ; 250                                         ;
+;     Dedicated logic registers      ; 208                                         ;
+; Total registers                    ; 208                                         ;
 ; Total pins                         ; 37                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 524,288                                     ;
@@ -176,34 +176,34 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                               ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; WaveTable.v                      ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/WaveTable.v                                         ;         ;
-; kbd_ps2.v                        ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/kbd_ps2.v                                           ;         ;
-; dpram_ctrl.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/dpram_ctrl.v                                        ;         ;
-; data_setup.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/data_setup.v                                        ;         ;
-; codec_prgm.v                     ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/codec_prgm.v                                        ;         ;
-; adc_proj.v                       ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/adc_proj.v                                          ;         ;
-; WaveTableSynth.v                 ; yes             ; User Verilog HDL File                  ; H:/ECE641/WaveTableSynth/WaveTableSynth.v                                    ;         ;
-; dpram.v                          ; yes             ; User Wizard-Generated File             ; H:/ECE641/WaveTableSynth/dpram.v                                             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_o5q1.tdf           ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf                              ;         ;
-; allwaves.hex                     ; yes             ; Auto-Found Memory Initialization File  ; H:/ECE641/WaveTableSynth/allwaves.hex                                        ;         ;
-; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/decode_msa.tdf                                   ;         ;
-; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/decode_f8a.tdf                                   ;         ;
-; db/mux_lob.tdf                   ; yes             ; Auto-Generated Megafunction            ; H:/ECE641/WaveTableSynth/db/mux_lob.tdf                                      ;         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; AllWaves.mif                     ; yes             ; User Memory Initialization File  ; C:/Users/haroldvilander/Desktop/WaveTableSynth/AllWaves.mif                  ;         ;
+; WaveTable.v                      ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTable.v                   ;         ;
+; kbd_ps2.v                        ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/kbd_ps2.v                     ;         ;
+; dpram_ctrl.v                     ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram_ctrl.v                  ;         ;
+; data_setup.v                     ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/data_setup.v                  ;         ;
+; codec_prgm.v                     ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/codec_prgm.v                  ;         ;
+; adc_proj.v                       ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/adc_proj.v                    ;         ;
+; WaveTableSynth.v                 ; yes             ; User Verilog HDL File            ; C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v              ;         ;
+; dpram.v                          ; yes             ; User Wizard-Generated File       ; C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram.v                       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_f5q1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/haroldvilander/Desktop/WaveTableSynth/db/altsyncram_f5q1.tdf        ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Users/haroldvilander/Desktop/WaveTableSynth/db/decode_msa.tdf             ;         ;
+; db/decode_f8a.tdf                ; yes             ; Auto-Generated Megafunction      ; C:/Users/haroldvilander/Desktop/WaveTableSynth/db/decode_f8a.tdf             ;         ;
+; db/mux_lob.tdf                   ; yes             ; Auto-Generated Megafunction      ; C:/Users/haroldvilander/Desktop/WaveTableSynth/db/mux_lob.tdf                ;         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -211,20 +211,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 310      ;
+; Estimated Total logic elements              ; 321      ;
 ;                                             ;          ;
-; Total combinational functions               ; 240      ;
+; Total combinational functions               ; 250      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 158      ;
-;     -- 3 input functions                    ; 31       ;
-;     -- <=2 input functions                  ; 51       ;
+;     -- 4 input functions                    ; 162      ;
+;     -- 3 input functions                    ; 35       ;
+;     -- <=2 input functions                  ; 53       ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 207      ;
+;     -- normal mode                          ; 217      ;
 ;     -- arithmetic mode                      ; 33       ;
 ;                                             ;          ;
-; Total registers                             ; 207      ;
-;     -- Dedicated logic registers            ; 207      ;
+; Total registers                             ; 208      ;
+;     -- Dedicated logic registers            ; 208      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 37       ;
@@ -234,8 +234,8 @@ refer to the applicable agreement for further details.
 ;                                             ;          ;
 ; Maximum fan-out node                        ; ar~input ;
 ; Maximum fan-out                             ; 157      ;
-; Total fan-out                               ; 2596     ;
-; Average fan-out                             ; 4.43     ;
+; Total fan-out                               ; 2629     ;
+; Average fan-out                             ; 4.40     ;
 +---------------------------------------------+----------+
 
 
@@ -244,29 +244,29 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                        ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |WaveTableSynth                                 ; 240 (1)             ; 207 (0)                   ; 524288      ; 0            ; 0       ; 0         ; 37   ; 0            ; |WaveTableSynth                                                                                                                                            ; WaveTableSynth  ; work         ;
-;    |WaveTable:waveTable_inst|                   ; 65 (27)             ; 62 (23)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst                                                                                                                   ; WaveTable       ; work         ;
-;       |dpram_ctrl:inst|                         ; 38 (2)              ; 39 (35)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst                                                                                                   ; dpram_ctrl      ; work         ;
+; |WaveTableSynth                                 ; 250 (1)             ; 208 (0)                   ; 524288      ; 0            ; 0       ; 0         ; 37   ; 0            ; |WaveTableSynth                                                                                                                                            ; WaveTableSynth  ; work         ;
+;    |WaveTable:waveTable_inst|                   ; 72 (33)             ; 62 (22)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst                                                                                                                   ; WaveTable       ; work         ;
+;       |dpram_ctrl:inst|                         ; 39 (3)              ; 40 (36)                   ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst                                                                                                   ; dpram_ctrl      ; work         ;
 ;          |dpram:ram|                            ; 36 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram                                                                                         ; dpram           ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 36 (0)              ; 4 (0)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component                                                         ; altsyncram      ; work         ;
-;                |altsyncram_o5q1:auto_generated| ; 36 (0)              ; 4 (4)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated                          ; altsyncram_o5q1 ; work         ;
-;                   |decode_f8a:rden_decode_b|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a      ; work         ;
-;                   |mux_lob:mux3|                ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|mux_lob:mux3             ; mux_lob         ; work         ;
-;    |adc_proj:comb_3|                            ; 101 (34)            ; 98 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3                                                                                                                            ; adc_proj        ; work         ;
-;       |codec_prgm:inst2|                        ; 39 (39)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2                                                                                                           ; codec_prgm      ; work         ;
+;                |altsyncram_f5q1:auto_generated| ; 36 (0)              ; 4 (4)                     ; 524288      ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated                          ; altsyncram_f5q1 ; work         ;
+;                   |decode_f8a:rden_decode_b|    ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_f8a:rden_decode_b ; decode_f8a      ; work         ;
+;                   |mux_lob:mux3|                ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|mux_lob:mux3             ; mux_lob         ; work         ;
+;    |adc_proj:comb_3|                            ; 106 (37)            ; 99 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3                                                                                                                            ; adc_proj        ; work         ;
+;       |codec_prgm:inst2|                        ; 41 (41)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2                                                                                                           ; codec_prgm      ; work         ;
 ;       |data_setup:inst1|                        ; 28 (28)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|adc_proj:comb_3|data_setup:inst1                                                                                                           ; data_setup      ; work         ;
-;    |kbd:keyboard_inst|                          ; 73 (73)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|kbd:keyboard_inst                                                                                                                          ; kbd             ; work         ;
+;    |kbd:keyboard_inst|                          ; 71 (71)             ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WaveTableSynth|kbd:keyboard_inst                                                                                                                          ; kbd             ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                   ;
-+------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; Name                                                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
-+------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
-; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32768        ; 16           ; 32768        ; 16           ; 524288 ; None ;
-+------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                           ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------+
+; Name                                                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF          ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------+
+; WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32768        ; 16           ; 32768        ; 16           ; 524288 ; AllWaves.mif ;
++------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -329,7 +329,6 @@ Encoding Type:  One-Hot
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[13]      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[2,6,14]  ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Wr_A[14]      ; Merged with WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0] ;
-; adc_proj:comb_3|AUD_DACLRCK_prev                       ; Merged with WaveTable:waveTable_inst|daclrck_prev            ;
 ; adc_proj:comb_3|dac_ldat[0]                            ; Stuck at GND due to stuck port data_in                       ;
 ; adc_proj:comb_3|dac_rdat[0]                            ; Stuck at GND due to stuck port data_in                       ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|Data[0]       ; Stuck at GND due to stuck port data_in                       ;
@@ -374,7 +373,7 @@ Encoding Type:  One-Hot
 ; adc_proj:comb_3|codec_prgm:inst2|data_sent[7]          ; Merged with adc_proj:comb_3|codec_prgm:inst2|data_sent[6]    ;
 ; adc_proj:comb_3|codec_prgm:inst2|data_sent[3]          ; Merged with adc_proj:comb_3|codec_prgm:inst2|data_sent[2]    ;
 ; WaveTable:waveTable_inst|dpram_ctrl:inst|WE            ; Stuck at GND due to stuck port data_in                       ;
-; Total Number of Removed Registers = 87                 ;                                                              ;
+; Total Number of Removed Registers = 86                 ;                                                              ;
 +--------------------------------------------------------+--------------------------------------------------------------+
 
 
@@ -410,7 +409,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 207   ;
+; Total registers                              ; 208   ;
 ; Number of registers using Synchronous Clear  ; 23    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 155   ;
@@ -434,7 +433,7 @@ Encoding Type:  One-Hot
 ; kbd:keyboard_inst|filter_sr[7]               ; 2       ;
 ; kbd:keyboard_inst|filter_sr[6]               ; 2       ;
 ; kbd:keyboard_inst|filter_sr[1]               ; 2       ;
-; adc_proj:comb_3|codec_prgm:inst2|bit_sent    ; 5       ;
+; adc_proj:comb_3|codec_prgm:inst2|bit_sent    ; 4       ;
 ; Total number of inverted registers = 10      ;         ;
 +----------------------------------------------+---------+
 
@@ -444,14 +443,14 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_ldat[29]                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2|counter[4] ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_rdat[23]                ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_ldat[20]                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |WaveTableSynth|adc_proj:comb_3|codec_prgm:inst2|counter[1] ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |WaveTableSynth|adc_proj:comb_3|dac_rdat[30]                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated ;
+; Source assignments for WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                         ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------------+
@@ -520,7 +519,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                             ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                             ;
-; INIT_FILE                          ; AllWaves.hex         ; Untyped                                                             ;
+; INIT_FILE                          ; AllWaves.mif         ; Untyped                                                             ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                             ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                             ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                             ;
@@ -533,7 +532,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                             ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                             ;
-; CBXI_PARAMETER                     ; altsyncram_o5q1      ; Untyped                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_f5q1      ; Untyped                                                             ;
 +------------------------------------+----------------------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -571,14 +570,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst"                                           ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; WR   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; Done ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "WaveTable:waveTable_inst|dpram_ctrl:inst" ;
++------------+-------+----------+--------------------------------------+
+; Port       ; Type  ; Severity ; Details                              ;
++------------+-------+----------+--------------------------------------+
+; Din[11..7] ; Input ; Info     ; Stuck at VCC                         ;
+; Din[3..0]  ; Input ; Info     ; Stuck at VCC                         ;
+; Din[15]    ; Input ; Info     ; Stuck at VCC                         ;
+; Din[14]    ; Input ; Info     ; Stuck at GND                         ;
+; Din[13]    ; Input ; Info     ; Stuck at VCC                         ;
+; Din[12]    ; Input ; Info     ; Stuck at GND                         ;
+; Din[6]     ; Input ; Info     ; Stuck at GND                         ;
+; Din[5]     ; Input ; Info     ; Stuck at VCC                         ;
+; Din[4]     ; Input ; Info     ; Stuck at GND                         ;
+; WR         ; Input ; Info     ; Stuck at GND                         ;
++------------+-------+----------+--------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -587,28 +594,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 37                          ;
-; cycloneiii_ff         ; 207                         ;
+; cycloneiii_ff         ; 208                         ;
 ;     CLR               ; 85                          ;
 ;     CLR SCLR          ; 17                          ;
 ;     ENA               ; 43                          ;
 ;     ENA CLR           ; 47                          ;
 ;     ENA CLR SCLR      ; 6                           ;
-;     plain             ; 9                           ;
+;     plain             ; 10                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 240                         ;
+; cycloneiii_lcell_comb ; 250                         ;
 ;     arith             ; 33                          ;
 ;         2 data inputs ; 22                          ;
 ;         3 data inputs ; 11                          ;
-;     normal            ; 207                         ;
+;     normal            ; 217                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 8                           ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 158                         ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 162                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.99                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 2.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -627,44 +634,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 01 12:28:02 2018
+    Info: Processing started: Tue May 01 20:55:44 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WaveTableSynth -c WaveTableSynth
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file wavetable.v
-    Info (12023): Found entity 1: WaveTable File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 7
+    Info (12023): Found entity 1: WaveTable File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTable.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file kbd_ps2.v
-    Info (12023): Found entity 1: kbd File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 19
+    Info (12023): Found entity 1: kbd File: C:/Users/haroldvilander/Desktop/WaveTableSynth/kbd_ps2.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file dpram_ctrl.v
-    Info (12023): Found entity 1: dpram_ctrl File: H:/ECE641/WaveTableSynth/dpram_ctrl.v Line: 6
+    Info (12023): Found entity 1: dpram_ctrl File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram_ctrl.v Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file data_setup.v
-    Info (12023): Found entity 1: data_setup File: H:/ECE641/WaveTableSynth/data_setup.v Line: 2
+    Info (12023): Found entity 1: data_setup File: C:/Users/haroldvilander/Desktop/WaveTableSynth/data_setup.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file codec_prgm.v
-    Info (12023): Found entity 1: codec_prgm File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 1
+    Info (12023): Found entity 1: codec_prgm File: C:/Users/haroldvilander/Desktop/WaveTableSynth/codec_prgm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file adc_proj.v
-    Info (12023): Found entity 1: adc_proj File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 7
+    Info (12023): Found entity 1: adc_proj File: C:/Users/haroldvilander/Desktop/WaveTableSynth/adc_proj.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file wavetablesynth.v
-    Info (12023): Found entity 1: WaveTableSynth File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 3
+    Info (12023): Found entity 1: WaveTableSynth File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file dpram.v
-    Info (12023): Found entity 1: dpram File: H:/ECE641/WaveTableSynth/dpram.v Line: 39
-Critical Warning (10846): Verilog HDL Instantiation warning at WaveTableSynth.v(54): instance has no name File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 54
+    Info (12023): Found entity 1: dpram File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram.v Line: 39
+Critical Warning (10846): Verilog HDL Instantiation warning at WaveTableSynth.v(54): instance has no name File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 54
 Info (12127): Elaborating entity "WaveTableSynth" for the top level hierarchy
-Info (12128): Elaborating entity "kbd" for hierarchy "kbd:keyboard_inst" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 37
-Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(143): truncated value with size 32 to match size of target (2) File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 143
-Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(145): truncated value with size 32 to match size of target (2) File: H:/ECE641/WaveTableSynth/kbd_ps2.v Line: 145
-Info (12128): Elaborating entity "WaveTable" for hierarchy "WaveTable:waveTable_inst" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 38
-Warning (10036): Verilog HDL or VHDL warning at WaveTable.v(105): object "lrck_negedge" assigned a value but never read File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 105
-Info (12128): Elaborating entity "dpram_ctrl" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst" File: H:/ECE641/WaveTableSynth/WaveTable.v Line: 112
-Info (12128): Elaborating entity "dpram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram" File: H:/ECE641/WaveTableSynth/dpram_ctrl.v Line: 89
-Info (12128): Elaborating entity "altsyncram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
-Info (12130): Elaborated megafunction instantiation "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
-Info (12133): Instantiated megafunction "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" with the following parameter: File: H:/ECE641/WaveTableSynth/dpram.v Line: 88
+Info (12128): Elaborating entity "kbd" for hierarchy "kbd:keyboard_inst" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 37
+Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(143): truncated value with size 32 to match size of target (2) File: C:/Users/haroldvilander/Desktop/WaveTableSynth/kbd_ps2.v Line: 143
+Warning (10230): Verilog HDL assignment warning at kbd_ps2.v(145): truncated value with size 32 to match size of target (2) File: C:/Users/haroldvilander/Desktop/WaveTableSynth/kbd_ps2.v Line: 145
+Info (12128): Elaborating entity "WaveTable" for hierarchy "WaveTable:waveTable_inst" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 38
+Warning (10036): Verilog HDL or VHDL warning at WaveTable.v(94): object "lrck_negedge" assigned a value but never read File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTable.v Line: 94
+Info (12128): Elaborating entity "dpram_ctrl" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTable.v Line: 101
+Info (12128): Elaborating entity "dpram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram_ctrl.v Line: 89
+Info (12128): Elaborating entity "altsyncram" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram.v Line: 88
+Info (12130): Elaborated megafunction instantiation "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram.v Line: 88
+Info (12133): Instantiated megafunction "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/haroldvilander/Desktop/WaveTableSynth/dpram.v Line: 88
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK0"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
-    Info (12134): Parameter "init_file" = "AllWaves.hex"
+    Info (12134): Parameter "init_file" = "AllWaves.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "32768"
@@ -679,42 +686,41 @@ Info (12133): Instantiated megafunction "WaveTable:waveTable_inst|dpram_ctrl:ins
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_b" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o5q1.tdf
-    Info (12023): Found entity 1: altsyncram_o5q1 File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 33
-Info (12128): Elaborating entity "altsyncram_o5q1" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f5q1.tdf
+    Info (12023): Found entity 1: altsyncram_f5q1 File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/altsyncram_f5q1.tdf Line: 33
+Info (12128): Elaborating entity "altsyncram_f5q1" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_msa.tdf
-    Info (12023): Found entity 1: decode_msa File: H:/ECE641/WaveTableSynth/db/decode_msa.tdf Line: 22
-Info (12128): Elaborating entity "decode_msa" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_msa:decode2" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 45
+    Info (12023): Found entity 1: decode_msa File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/decode_msa.tdf Line: 22
+Info (12128): Elaborating entity "decode_msa" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_msa:decode2" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/altsyncram_f5q1.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_f8a.tdf
-    Info (12023): Found entity 1: decode_f8a File: H:/ECE641/WaveTableSynth/db/decode_f8a.tdf Line: 22
-Info (12128): Elaborating entity "decode_f8a" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|decode_f8a:rden_decode_b" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 46
+    Info (12023): Found entity 1: decode_f8a File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/decode_f8a.tdf Line: 22
+Info (12128): Elaborating entity "decode_f8a" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_f8a:rden_decode_b" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/altsyncram_f5q1.tdf Line: 46
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_lob.tdf
-    Info (12023): Found entity 1: mux_lob File: H:/ECE641/WaveTableSynth/db/mux_lob.tdf Line: 22
-Info (12128): Elaborating entity "mux_lob" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_o5q1:auto_generated|mux_lob:mux3" File: H:/ECE641/WaveTableSynth/db/altsyncram_o5q1.tdf Line: 48
-Info (12128): Elaborating entity "adc_proj" for hierarchy "adc_proj:comb_3" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 54
-Info (12128): Elaborating entity "data_setup" for hierarchy "adc_proj:comb_3|data_setup:inst1" File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 45
-Info (12128): Elaborating entity "codec_prgm" for hierarchy "adc_proj:comb_3|codec_prgm:inst2" File: H:/ECE641/WaveTableSynth/adc_proj.v Line: 48
+    Info (12023): Found entity 1: mux_lob File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/mux_lob.tdf Line: 22
+Info (12128): Elaborating entity "mux_lob" for hierarchy "WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|mux_lob:mux3" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/db/altsyncram_f5q1.tdf Line: 48
+Info (12128): Elaborating entity "adc_proj" for hierarchy "adc_proj:comb_3" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 54
+Info (12128): Elaborating entity "data_setup" for hierarchy "adc_proj:comb_3|data_setup:inst1" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/adc_proj.v Line: 45
+Info (12128): Elaborating entity "codec_prgm" for hierarchy "adc_proj:comb_3|codec_prgm:inst2" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/adc_proj.v Line: 48
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: H:/ECE641/WaveTableSynth/codec_prgm.v Line: 21
+Info (13000): Registers with preset signals will power-up high File: C:/Users/haroldvilander/Desktop/WaveTableSynth/codec_prgm.v Line: 21
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 10
-    Warning (15610): No output dependent on input pin "AUD_ADCLRCK" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 14
-    Warning (15610): No output dependent on input pin "bitcrush" File: H:/ECE641/WaveTableSynth/WaveTableSynth.v Line: 15
-Info (21057): Implemented 417 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 10
+    Warning (15610): No output dependent on input pin "AUD_ADCLRCK" File: C:/Users/haroldvilander/Desktop/WaveTableSynth/WaveTableSynth.v Line: 14
+Info (21057): Implemented 428 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 316 logic cells
+    Info (21061): Implemented 327 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 672 megabytes
-    Info: Processing ended: Tue May 01 12:28:22 2018
-    Info: Elapsed time: 00:00:20
+    Info: Processing ended: Tue May 01 20:55:59 2018
+    Info: Elapsed time: 00:00:15
     Info: Total CPU time (on all processors): 00:00:25
 
 

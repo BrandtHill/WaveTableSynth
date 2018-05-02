@@ -1,5 +1,5 @@
 Flow report for WaveTableSynth
-Tue May 01 12:29:23 2018
+Tue May 01 20:56:32 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue May 01 12:29:07 2018       ;
+; Flow Status                        ; Successful - Tue May 01 20:56:27 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; WaveTableSynth                              ;
 ; Top-level Entity Name              ; WaveTableSynth                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 302 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 240 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 207 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 207                                         ;
+; Total logic elements               ; 312 / 114,480 ( < 1 % )                     ;
+;     Total combinational functions  ; 251 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 208 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 208                                         ;
 ; Total pins                         ; 37 / 529 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 524,288 / 3,981,312 ( 13 % )                ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/01/2018 12:28:04 ;
+; Start date & time ; 05/01/2018 20:55:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; WaveTableSynth      ;
 +-------------------+---------------------+
@@ -75,13 +75,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 154880082597426.152519568408748        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 154880082309099.152522614608040        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; dpram_bb.v                             ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
@@ -91,11 +93,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 672 MB              ; 00:00:24                           ;
-; Fitter                    ; 00:00:30     ; 1.0                     ; 1628 MB             ; 00:00:28                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 575 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:14     ; 1.0                     ; 741 MB              ; 00:00:03                           ;
-; Total                     ; 00:01:05     ; --                      ; --                  ; 00:00:58                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 672 MB              ; 00:00:25                           ;
+; Fitter                    ; 00:00:21     ; 1.0                     ; 1633 MB             ; 00:00:28                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 578 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.1                     ; 744 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:44     ; --                      ; --                  ; 00:00:59                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -104,10 +106,10 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; E2192-10-0127    ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; E2192-10-0127    ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; E2192-10-0127    ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; E2192-10-0127    ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; E2192-13-0130    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; E2192-13-0130    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; E2192-13-0130    ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; E2192-13-0130    ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

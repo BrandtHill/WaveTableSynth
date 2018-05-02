@@ -22,10 +22,11 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	wire [15:0] Dout;				//Dout directly from dpram_ctrl.
 	wire [14:0] address; 		//15 bit address.
 	wire Done; 						//Basically never used. Feeds into dpram_ctrl
+	//reg WR;
 
-	assign debug = {RD,dataOut[15:9]};
+	//assign debug ={RD,address[6:0]};
 	//assign debug = {|wavePosition[12:0],wavePosition[6:0]};
-
+	assign debug = {Done, |Dout, Dout[5:0]};
 										
 	//Lookup table for scale values
 	//These values are rounded to nearest int.								
@@ -44,30 +45,13 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 		assign scaleTable[11] = 8'd139;	//G# 11
 		assign scaleTable[12] = 8'd148; //A  12
 										
-										
-	/*parameter bit [7:0][12:0]scaleTable=
-	{	
-		//These values are rounded to nearest int.
-		8'd74, //A  0
-		8'd78, //A# 1
-		8'd83, //B  2
-		8'd88, //C  3
-		8'd93, //C# 4
-		8'd99, //D  5
-		8'd104,//D# 6
-		8'd111,//E  7
-		8'd117,//F  8
-		8'd124,//F# 9
-		8'd132,//G  10
-		8'd139,//G# 11
-		8'd148, //A  12
-	};*/
-	
+
 	//2 bit wave select then 13 bit position of wave sample
 	assign address = {waveSelect, wavePosition};
-	
+	//assign address = 15'h800;
+
 	//Convert Dout from little endian to big endian and output
-	assign dataOut = {Dout[7:0],Dout[15:8]};
+	assign dataOut = Dout;//{Dout[7:0],Dout[15:8]};
 	
 	//Iterate through the wave sample, incrementing by scale
 	//each Left Right Clock (48.8kHz) unless key isn't on.
@@ -91,12 +75,17 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	//Read in a 16 bit sample of the wave once per 48.8kHz cycle
 	always@(posedge bclk or negedge ar)
 		if(~ar)
+		begin
 			RD = 1'b0;
+			//WR = 1'b1;
+		end
 		else if(lrck_posedge)
 			RD = 1'b1;
 		else
-			RD = 1'b0;
-		
+		begin
+			RD = 1'b1;
+			//WR = 1'b0;
+	    end	
 	
 	//This is all to determine when the Left Right Clock
 	//goes high and low for one cycle of the bitclock.
@@ -109,6 +98,6 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 			daclrck_prev = 1'b0;
 		else
 			daclrck_prev = daclrck;
-dpram_ctrl inst (.clk(clk_50), .A(address), .RD(RD), .Din(16'hXXXX),  .WR(1'b0),  .Dout(Dout), .Done(Done));
+dpram_ctrl inst (.clk(clk_50), .A(address), .RD(RD), .Din(16'hAFAF),  .WR(1'b0),  .Dout(Dout), .Done(Done));
 			
 endmodule

@@ -128,15 +128,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_DACLRCK",
-					"strict" : false
-				},
-				{
 					"name" : "ps2_dat",
 					"strict" : false
 				},
 				{
 					"name" : "ps2_clk",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "bitcrush",
 					"strict" : false
 				}
 			]
