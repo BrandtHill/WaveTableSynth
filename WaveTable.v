@@ -16,6 +16,7 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	output wire [15:0] dataOut; //This is Dout but in Big Endian and an output port. goes to codec
 	output [7:0] debug;
 
+	reg [7:0] counter; 			//Increments on bit clock, resets on left/right clock posedge.
 	reg [12:0] wavePosition; 	//Least significant 13 bits of address.
 	reg [7:0] scale; 				//This value is what we'll increment wave's address by.
 	reg RD; 							//We read but never write.
@@ -26,24 +27,24 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 
 	//assign debug ={RD,address[6:0]};
 	//assign debug = {|wavePosition[12:0],wavePosition[6:0]};
-	assign debug = {Done, |Dout, Dout[5:0]};
+	assign debug = {Done, |Dout, Dout[15:10]};
 										
 	//Lookup table for scale values
 	//These values are rounded to nearest int.								
 	wire [7:0] scaleTable [12:0];
-		assign scaleTable[0] = 8'd74;	//A  0
-		assign scaleTable[1] = 8'd78;	//A# 1
-		assign scaleTable[2] = 8'd83;	//B  2
-		assign scaleTable[3] = 8'd88;	//C  3
-		assign scaleTable[4] = 8'd93;	//C# 4
-		assign scaleTable[5] = 8'd99;	//D  5
-		assign scaleTable[6] = 8'd104;	//D# 6
-		assign scaleTable[7] = 8'd111;	//E  7
-		assign scaleTable[8] = 8'd117;	//F  8
-		assign scaleTable[9] = 8'd124;	//F# 9
-		assign scaleTable[10] = 8'd132;	//G  10
-		assign scaleTable[11] = 8'd139;	//G# 11
-		assign scaleTable[12] = 8'd148; //A  12
+		assign scaleTable[0] = 8'd37;//8'd74;	//A  0
+		assign scaleTable[1] = 8'd39;//8'd78;	//A# 1
+		assign scaleTable[2] = 8'd41;//8'd83;	//B  2
+		assign scaleTable[3] = 8'd44;//8'd88;	//C  3
+		assign scaleTable[4] = 8'd46;//8'd93;	//C# 4
+		assign scaleTable[5] = 8'd49;//8'd99;	//D  5
+		assign scaleTable[6] = 8'd52;//8'd104;	//D# 6
+		assign scaleTable[7] = 8'd55;//8'd111;	//E  7
+		assign scaleTable[8] = 8'd58;//8'd117;	//F  8
+		assign scaleTable[9] = 8'd62;//8'd124;	//F# 9
+		assign scaleTable[10] = 8'd66;//8'd132;	//G  10
+		assign scaleTable[11] = 8'd69;//8'd139;	//G# 11
+		assign scaleTable[12] = 8'd74;//8'd148; //A  12
 										
 
 	//2 bit wave select then 13 bit position of wave sample
@@ -75,17 +76,22 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	//Read in a 16 bit sample of the wave once per 48.8kHz cycle
 	always@(posedge bclk or negedge ar)
 		if(~ar)
-		begin
 			RD = 1'b0;
-			//WR = 1'b1;
-		end
-		else if(lrck_posedge)
+		else if(counter == 8'd56)
+		//else if(lrck_posedge)
 			RD = 1'b1;
 		else
-		begin
 			RD = 1'b1;
-			//WR = 1'b0;
-	    end	
+
+			
+			
+	always@(posedge bclk or negedge ar)
+		if(~ar)		
+			counter = 8'b0;
+		else if(lrck_posedge)
+			counter = 8'b0;
+		else
+			counter = counter + 8'b1;
 	
 	//This is all to determine when the Left Right Clock
 	//goes high and low for one cycle of the bitclock.

@@ -449,26 +449,26 @@ q[15] <= altsyncram:altsyncram_component.q_b
 
 
 |WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component
-wren_a => altsyncram_f5q1:auto_generated.wren_a
+wren_a => altsyncram_edr1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
 rden_b => ~NO_FANOUT~
-data_a[0] => altsyncram_f5q1:auto_generated.data_a[0]
-data_a[1] => altsyncram_f5q1:auto_generated.data_a[1]
-data_a[2] => altsyncram_f5q1:auto_generated.data_a[2]
-data_a[3] => altsyncram_f5q1:auto_generated.data_a[3]
-data_a[4] => altsyncram_f5q1:auto_generated.data_a[4]
-data_a[5] => altsyncram_f5q1:auto_generated.data_a[5]
-data_a[6] => altsyncram_f5q1:auto_generated.data_a[6]
-data_a[7] => altsyncram_f5q1:auto_generated.data_a[7]
-data_a[8] => altsyncram_f5q1:auto_generated.data_a[8]
-data_a[9] => altsyncram_f5q1:auto_generated.data_a[9]
-data_a[10] => altsyncram_f5q1:auto_generated.data_a[10]
-data_a[11] => altsyncram_f5q1:auto_generated.data_a[11]
-data_a[12] => altsyncram_f5q1:auto_generated.data_a[12]
-data_a[13] => altsyncram_f5q1:auto_generated.data_a[13]
-data_a[14] => altsyncram_f5q1:auto_generated.data_a[14]
-data_a[15] => altsyncram_f5q1:auto_generated.data_a[15]
+data_a[0] => altsyncram_edr1:auto_generated.data_a[0]
+data_a[1] => altsyncram_edr1:auto_generated.data_a[1]
+data_a[2] => altsyncram_edr1:auto_generated.data_a[2]
+data_a[3] => altsyncram_edr1:auto_generated.data_a[3]
+data_a[4] => altsyncram_edr1:auto_generated.data_a[4]
+data_a[5] => altsyncram_edr1:auto_generated.data_a[5]
+data_a[6] => altsyncram_edr1:auto_generated.data_a[6]
+data_a[7] => altsyncram_edr1:auto_generated.data_a[7]
+data_a[8] => altsyncram_edr1:auto_generated.data_a[8]
+data_a[9] => altsyncram_edr1:auto_generated.data_a[9]
+data_a[10] => altsyncram_edr1:auto_generated.data_a[10]
+data_a[11] => altsyncram_edr1:auto_generated.data_a[11]
+data_a[12] => altsyncram_edr1:auto_generated.data_a[12]
+data_a[13] => altsyncram_edr1:auto_generated.data_a[13]
+data_a[14] => altsyncram_edr1:auto_generated.data_a[14]
+data_a[15] => altsyncram_edr1:auto_generated.data_a[15]
 data_b[0] => ~NO_FANOUT~
 data_b[1] => ~NO_FANOUT~
 data_b[2] => ~NO_FANOUT~
@@ -485,39 +485,39 @@ data_b[12] => ~NO_FANOUT~
 data_b[13] => ~NO_FANOUT~
 data_b[14] => ~NO_FANOUT~
 data_b[15] => ~NO_FANOUT~
-address_a[0] => altsyncram_f5q1:auto_generated.address_a[0]
-address_a[1] => altsyncram_f5q1:auto_generated.address_a[1]
-address_a[2] => altsyncram_f5q1:auto_generated.address_a[2]
-address_a[3] => altsyncram_f5q1:auto_generated.address_a[3]
-address_a[4] => altsyncram_f5q1:auto_generated.address_a[4]
-address_a[5] => altsyncram_f5q1:auto_generated.address_a[5]
-address_a[6] => altsyncram_f5q1:auto_generated.address_a[6]
-address_a[7] => altsyncram_f5q1:auto_generated.address_a[7]
-address_a[8] => altsyncram_f5q1:auto_generated.address_a[8]
-address_a[9] => altsyncram_f5q1:auto_generated.address_a[9]
-address_a[10] => altsyncram_f5q1:auto_generated.address_a[10]
-address_a[11] => altsyncram_f5q1:auto_generated.address_a[11]
-address_a[12] => altsyncram_f5q1:auto_generated.address_a[12]
-address_a[13] => altsyncram_f5q1:auto_generated.address_a[13]
-address_a[14] => altsyncram_f5q1:auto_generated.address_a[14]
-address_b[0] => altsyncram_f5q1:auto_generated.address_b[0]
-address_b[1] => altsyncram_f5q1:auto_generated.address_b[1]
-address_b[2] => altsyncram_f5q1:auto_generated.address_b[2]
-address_b[3] => altsyncram_f5q1:auto_generated.address_b[3]
-address_b[4] => altsyncram_f5q1:auto_generated.address_b[4]
-address_b[5] => altsyncram_f5q1:auto_generated.address_b[5]
-address_b[6] => altsyncram_f5q1:auto_generated.address_b[6]
-address_b[7] => altsyncram_f5q1:auto_generated.address_b[7]
-address_b[8] => altsyncram_f5q1:auto_generated.address_b[8]
-address_b[9] => altsyncram_f5q1:auto_generated.address_b[9]
-address_b[10] => altsyncram_f5q1:auto_generated.address_b[10]
-address_b[11] => altsyncram_f5q1:auto_generated.address_b[11]
-address_b[12] => altsyncram_f5q1:auto_generated.address_b[12]
-address_b[13] => altsyncram_f5q1:auto_generated.address_b[13]
-address_b[14] => altsyncram_f5q1:auto_generated.address_b[14]
+address_a[0] => altsyncram_edr1:auto_generated.address_a[0]
+address_a[1] => altsyncram_edr1:auto_generated.address_a[1]
+address_a[2] => altsyncram_edr1:auto_generated.address_a[2]
+address_a[3] => altsyncram_edr1:auto_generated.address_a[3]
+address_a[4] => altsyncram_edr1:auto_generated.address_a[4]
+address_a[5] => altsyncram_edr1:auto_generated.address_a[5]
+address_a[6] => altsyncram_edr1:auto_generated.address_a[6]
+address_a[7] => altsyncram_edr1:auto_generated.address_a[7]
+address_a[8] => altsyncram_edr1:auto_generated.address_a[8]
+address_a[9] => altsyncram_edr1:auto_generated.address_a[9]
+address_a[10] => altsyncram_edr1:auto_generated.address_a[10]
+address_a[11] => altsyncram_edr1:auto_generated.address_a[11]
+address_a[12] => altsyncram_edr1:auto_generated.address_a[12]
+address_a[13] => altsyncram_edr1:auto_generated.address_a[13]
+address_a[14] => altsyncram_edr1:auto_generated.address_a[14]
+address_b[0] => altsyncram_edr1:auto_generated.address_b[0]
+address_b[1] => altsyncram_edr1:auto_generated.address_b[1]
+address_b[2] => altsyncram_edr1:auto_generated.address_b[2]
+address_b[3] => altsyncram_edr1:auto_generated.address_b[3]
+address_b[4] => altsyncram_edr1:auto_generated.address_b[4]
+address_b[5] => altsyncram_edr1:auto_generated.address_b[5]
+address_b[6] => altsyncram_edr1:auto_generated.address_b[6]
+address_b[7] => altsyncram_edr1:auto_generated.address_b[7]
+address_b[8] => altsyncram_edr1:auto_generated.address_b[8]
+address_b[9] => altsyncram_edr1:auto_generated.address_b[9]
+address_b[10] => altsyncram_edr1:auto_generated.address_b[10]
+address_b[11] => altsyncram_edr1:auto_generated.address_b[11]
+address_b[12] => altsyncram_edr1:auto_generated.address_b[12]
+address_b[13] => altsyncram_edr1:auto_generated.address_b[13]
+address_b[14] => altsyncram_edr1:auto_generated.address_b[14]
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_f5q1:auto_generated.clock0
+clock0 => altsyncram_edr1:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -543,28 +543,28 @@ q_a[12] <= <GND>
 q_a[13] <= <GND>
 q_a[14] <= <GND>
 q_a[15] <= <GND>
-q_b[0] <= altsyncram_f5q1:auto_generated.q_b[0]
-q_b[1] <= altsyncram_f5q1:auto_generated.q_b[1]
-q_b[2] <= altsyncram_f5q1:auto_generated.q_b[2]
-q_b[3] <= altsyncram_f5q1:auto_generated.q_b[3]
-q_b[4] <= altsyncram_f5q1:auto_generated.q_b[4]
-q_b[5] <= altsyncram_f5q1:auto_generated.q_b[5]
-q_b[6] <= altsyncram_f5q1:auto_generated.q_b[6]
-q_b[7] <= altsyncram_f5q1:auto_generated.q_b[7]
-q_b[8] <= altsyncram_f5q1:auto_generated.q_b[8]
-q_b[9] <= altsyncram_f5q1:auto_generated.q_b[9]
-q_b[10] <= altsyncram_f5q1:auto_generated.q_b[10]
-q_b[11] <= altsyncram_f5q1:auto_generated.q_b[11]
-q_b[12] <= altsyncram_f5q1:auto_generated.q_b[12]
-q_b[13] <= altsyncram_f5q1:auto_generated.q_b[13]
-q_b[14] <= altsyncram_f5q1:auto_generated.q_b[14]
-q_b[15] <= altsyncram_f5q1:auto_generated.q_b[15]
+q_b[0] <= altsyncram_edr1:auto_generated.q_b[0]
+q_b[1] <= altsyncram_edr1:auto_generated.q_b[1]
+q_b[2] <= altsyncram_edr1:auto_generated.q_b[2]
+q_b[3] <= altsyncram_edr1:auto_generated.q_b[3]
+q_b[4] <= altsyncram_edr1:auto_generated.q_b[4]
+q_b[5] <= altsyncram_edr1:auto_generated.q_b[5]
+q_b[6] <= altsyncram_edr1:auto_generated.q_b[6]
+q_b[7] <= altsyncram_edr1:auto_generated.q_b[7]
+q_b[8] <= altsyncram_edr1:auto_generated.q_b[8]
+q_b[9] <= altsyncram_edr1:auto_generated.q_b[9]
+q_b[10] <= altsyncram_edr1:auto_generated.q_b[10]
+q_b[11] <= altsyncram_edr1:auto_generated.q_b[11]
+q_b[12] <= altsyncram_edr1:auto_generated.q_b[12]
+q_b[13] <= altsyncram_edr1:auto_generated.q_b[13]
+q_b[14] <= altsyncram_edr1:auto_generated.q_b[14]
+q_b[15] <= altsyncram_edr1:auto_generated.q_b[15]
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated
+|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -2453,7 +2453,7 @@ wren_a => decode_msa:decode2.enable
 wren_a => decode_msa:wren_decode_a.enable
 
 
-|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_msa:decode2
+|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|decode_msa:decode2
 data[0] => w_anode562w[1].IN0
 data[0] => w_anode575w[1].IN1
 data[0] => w_anode583w[1].IN0
@@ -2472,7 +2472,7 @@ eq[2] <= w_anode583w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode591w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_f8a:rden_decode_b
+|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|decode_f8a:rden_decode_b
 data[0] => w_anode600w[1].IN0
 data[0] => w_anode614w[1].IN1
 data[0] => w_anode623w[1].IN0
@@ -2487,7 +2487,7 @@ eq[2] <= w_anode623w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode632w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|decode_msa:wren_decode_a
+|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|decode_msa:wren_decode_a
 data[0] => w_anode562w[1].IN0
 data[0] => w_anode575w[1].IN1
 data[0] => w_anode583w[1].IN0
@@ -2506,7 +2506,7 @@ eq[2] <= w_anode583w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode591w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_f5q1:auto_generated|mux_lob:mux3
+|WaveTableSynth|WaveTable:waveTable_inst|dpram_ctrl:inst|dpram:ram|altsyncram:altsyncram_component|altsyncram_edr1:auto_generated|mux_lob:mux3
 data[0] => _.IN0
 data[0] => _.IN0
 data[1] => _.IN0

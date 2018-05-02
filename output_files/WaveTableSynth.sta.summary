@@ -3,47 +3,47 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : -3.538
-TNS   : -45.909
-
-Type  : Slow 1200mV 85C Model Setup 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : -3.370
-TNS   : -79.095
+Slack : -3.441
+TNS   : -47.169
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50'
-Slack : -3.117
-TNS   : -406.011
+Slack : -3.429
+TNS   : -388.929
+
+Type  : Slow 1200mV 85C Model Setup 'kbd:keyboard_inst|ps2_clk_filt'
+Slack : -3.383
+TNS   : -81.003
 
 Type  : Slow 1200mV 85C Model Setup 'AUD_DACLRCK'
-Slack : -2.816
-TNS   : -36.608
+Slack : -3.230
+TNS   : -41.990
 
 Type  : Slow 1200mV 85C Model Setup 'AUD_BCLK'
-Slack : -1.942
-TNS   : -61.389
+Slack : -1.850
+TNS   : -58.494
 
 Type  : Slow 1200mV 85C Model Setup 'adc_proj:comb_3|codec_prgm:inst2|done'
-Slack : -1.445
-TNS   : -7.842
+Slack : -1.543
+TNS   : -8.465
 
-Type  : Slow 1200mV 85C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : 0.387
+Type  : Slow 1200mV 85C Model Hold 'AUD_BCLK'
+Slack : 0.270
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50'
+Slack : 0.385
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : 0.389
+Slack : 0.386
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'adc_proj:comb_3|codec_prgm:inst2|done'
 Slack : 0.403
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clk_50'
-Slack : 0.403
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'AUD_BCLK'
-Slack : 0.406
+Type  : Slow 1200mV 85C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'AUD_DACLRCK'
@@ -52,7 +52,7 @@ TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -784.928
+TNS   : -783.643
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'AUD_BCLK'
 Slack : -3.000
@@ -75,56 +75,56 @@ Slack : -1.285
 TNS   : -7.710
 
 Type  : Slow 1200mV 0C Model Setup 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : -3.187
-TNS   : -40.654
-
-Type  : Slow 1200mV 0C Model Setup 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : -2.972
-TNS   : -69.049
+Slack : -3.095
+TNS   : -42.001
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50'
-Slack : -2.729
-TNS   : -353.713
+Slack : -3.040
+TNS   : -338.322
+
+Type  : Slow 1200mV 0C Model Setup 'kbd:keyboard_inst|ps2_clk_filt'
+Slack : -2.983
+TNS   : -70.909
 
 Type  : Slow 1200mV 0C Model Setup 'AUD_DACLRCK'
-Slack : -2.473
-TNS   : -32.149
+Slack : -2.905
+TNS   : -37.765
 
 Type  : Slow 1200mV 0C Model Setup 'AUD_BCLK'
-Slack : -1.600
-TNS   : -49.852
+Slack : -1.623
+TNS   : -48.613
 
 Type  : Slow 1200mV 0C Model Setup 'adc_proj:comb_3|codec_prgm:inst2|done'
-Slack : -1.222
-TNS   : -6.570
+Slack : -1.318
+TNS   : -7.188
 
 Type  : Slow 1200mV 0C Model Hold 'AUD_BCLK'
-Slack : 0.268
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : 0.338
+Slack : 0.128
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : 0.339
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'adc_proj:comb_3|codec_prgm:inst2|done'
-Slack : 0.354
+Slack : 0.337
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'adc_proj:comb_3|codec_prgm:inst2|done'
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
 Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'AUD_DACLRCK'
-Slack : 0.599
+Slack : 0.600
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -773.664
+TNS   : -772.379
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'AUD_BCLK'
 Slack : -3.000
@@ -146,61 +146,61 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'adc_proj:comb_3|codec_prgm:ins
 Slack : -1.285
 TNS   : -7.710
 
-Type  : Fast 1200mV 0C Model Setup 'AUD_BCLK'
-Slack : -1.342
-TNS   : -39.301
+Type  : Fast 1200mV 0C Model Setup 'clk_50'
+Slack : -1.222
+TNS   : -86.585
 
 Type  : Fast 1200mV 0C Model Setup 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : -1.215
-TNS   : -13.142
+Slack : -1.211
+TNS   : -14.023
 
-Type  : Fast 1200mV 0C Model Setup 'clk_50'
-Slack : -1.116
-TNS   : -96.428
+Type  : Fast 1200mV 0C Model Setup 'AUD_BCLK'
+Slack : -1.202
+TNS   : -38.575
 
 Type  : Fast 1200mV 0C Model Setup 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : -1.093
-TNS   : -22.018
+Slack : -1.176
+TNS   : -23.538
 
 Type  : Fast 1200mV 0C Model Setup 'AUD_DACLRCK'
-Slack : -0.852
-TNS   : -11.076
+Slack : -1.041
+TNS   : -13.533
 
 Type  : Fast 1200mV 0C Model Setup 'adc_proj:comb_3|codec_prgm:inst2|done'
-Slack : -0.163
-TNS   : -0.815
+Slack : -0.212
+TNS   : -1.060
 
 Type  : Fast 1200mV 0C Model Hold 'AUD_BCLK'
-Slack : 0.170
+Slack : 0.084
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_50'
-Slack : 0.171
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
-Slack : 0.174
+Slack : 0.136
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'adc_proj:comb_3|data_setup:inst1|counter[9]'
-Slack : 0.175
+Slack : 0.173
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'adc_proj:comb_3|codec_prgm:inst2|done'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'kbd:keyboard_inst|ps2_clk_filt'
 Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'AUD_DACLRCK'
-Slack : 0.254
+Slack : 0.284
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -434.625
+TNS   : -433.469
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'AUD_BCLK'
 Slack : -3.000
-TNS   : -83.810
+TNS   : -82.564
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'AUD_DACLRCK'
 Slack : -3.000

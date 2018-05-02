@@ -95,7 +95,7 @@ module dpram (
 `ifdef NO_PLI
 		altsyncram_component.init_file = "AllWaves.mif"
 `else
-		altsyncram_component.init_file = "AllWaves.mif"
+		altsyncram_component.init_file = "AllWavesSignedNoClip.mif"
 `endif
 ,
 		altsyncram_component.intended_device_family = "Cyclone IV E",
