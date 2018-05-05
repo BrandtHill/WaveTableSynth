@@ -4,8 +4,12 @@ module WaveTableSynth(
 
 	input clk_50,
 	input ar,
+
+	// I2C Connection for the Audio Codec
 	inout SDAT,
 	output SCLK,
+
+	// Audio Codec clock and data paths
 	output AUD_DACDAT,
 	input AUD_ADCDAT,
     output AUD_XCK,
@@ -13,11 +17,12 @@ module WaveTableSynth(
     input AUD_DACLRCK,
     input AUD_ADCLRCK,
     input bitcrush,
-    //output ,
-    //output bclk;
 
+	// PS2 Keyboard data and Clock
 	input  ps2_clk,
 	input	ps2_dat,
+
+	// LED debug signals
 	output [15:0] bitmask,
 	output [7:0] debug
 	);         
@@ -28,10 +33,6 @@ module WaveTableSynth(
 	wire [15:0] waveSample;			// 16 bit wave sample from WT to Audio Codec
 
 	wire keyOn; 					// wire between kb to WT; 1 if key pressed, 0 if key released.
-
-	//debug stuff
-//    assign debug = {|waveSample,waveSample[6:0]};
-
 
 
 	kbd keyboard_inst (.ar(ar), .clk(clk_50), .ps2_clk(ps2_clk), .ps2_dat(ps2_dat), .bitmask(bitmask), .keyval(keyVal), .keyOn(keyOn), .select(waveSelect));
@@ -54,29 +55,3 @@ module WaveTableSynth(
 	);
 
 endmodule	
-//	adc_proj( Brandt's audio codec code
-//        input clk_50,
-//		input ar,
-//		inout SDAT,
-//		output SCLK,
-//		output AUD_DACDAT,
-//		input AUD_ADCDAT,
-//	    output AUD_XCK,
-//		input AUD_BCLK,
-//        input AUD_DACLRCK,
-//        input AUD_ADCLRCK,
-//        input bitcrush,
-//        output daclrck,
-//        output dacdat,
-//        output adcdat,
-//        output bclk,
-//        output adclrck,
- 
-
-
-// maybe needed for debug
-//    output dacdat;
-//    output adcdat;
-//    output adclrck;
- 
-//	maybe needed for debug output psclk, psdat;, .psclk(), .psdat()
