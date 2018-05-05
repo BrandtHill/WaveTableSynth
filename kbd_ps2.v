@@ -10,8 +10,8 @@ Keyboards do not require bidirectional data, so only input
 is implemented. Output comes in the form of a bitmask
 representing piano keys from C to B with minors included
 where appropriate (notes range from index 0 to index 11).
-Special indices:    12: [
-                    13: ]
+Special indices:    12: +
+                    13: -
                     14: \
                     15: unrecognized
 ==========================================================*/
