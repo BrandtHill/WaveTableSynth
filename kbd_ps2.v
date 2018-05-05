@@ -17,20 +17,17 @@ Special indices:    12: +
 ==========================================================*/
 
 module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select );
-	input	ar;
-	input	clk;
-	input  ps2_clk;
-	input	ps2_dat;
+	input ar;
+	input clk;
+	input ps2_clk;
+	input ps2_dat;
 	output reg [15:0] bitmask;
 	output reg [3:0] keyval;
 	output keyOn;
 	output reg [1:0] select;
 	
- 
-	
 	reg [7:0] code;
-  // We need to filter the ps2 clock for edges
-	reg	ps2_clk_filt;
+	reg	ps2_clk_filt; // We need to filter the ps2 clock for edges
 	reg [7:0] filter_sr;
 	
 	always @(negedge ar or posedge clk)
@@ -48,8 +45,8 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select );
                 ps2_clk_filt <= 1'b1; // Set filtered value low
         end
     
-	reg [3:0]	   bit_count;
-	reg			       currently_receiving;
+	reg [3:0]    bit_count;
+	reg          currently_receiving;
 	reg          received_stop;
 	reg [3:0]    bitindex;
 
@@ -100,8 +97,8 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select );
         end
 			
 							
-	// This always block defines the lookup table that converts
-  // scan codes into bit positions for the output vector
+    // This always block defines the lookup table that converts
+    // scan codes into bit positions for the output vector
 	always@(code)
 		case(code)
 			8'h1A: bitindex = 0;   //Z
@@ -126,26 +123,26 @@ module kbd(ar, clk, ps2_clk, ps2_dat, bitmask, keyval, keyOn, select );
 	assign pianoKeys = bitmask[12:0];
 	assign keyOn = |pianoKeys;
   
-  //Process +/- keys
-  reg plus_prev, minus_prev;
-  wire plus_rising, minus_rising;
-  assign plus_rising = (plus_prev==0)&&(bitmask[13]==1);
-  assign minus_rising = (minus_prev==0)&&(bitmask[14]==1);
+    //Process +/- keys
+    reg plus_prev, minus_prev;
+    wire plus_rising, minus_rising;
+    assign plus_rising = (plus_prev==0)&&(bitmask[13]==1);
+    assign minus_rising = (minus_prev==0)&&(bitmask[14]==1);
   
-  always @(negedge ar or posedge clk)
-	if(~ar) begin
-      // Initialize values to zero
-      select <= 0;
-      plus_prev <= 0;
-      minus_prev <= 0;
-	end else begin
-		if(plus_rising)
-		  select <= select + 1;
-		if(minus_rising)
-		  select <= select - 1;
-		
-		plus_prev <= bitmask[13];
-		minus_prev <= bitmask[14];
-  end
+    always @(negedge ar or posedge clk)
+        if(~ar) begin
+            // Initialize values to zero
+            select <= 0;
+            plus_prev <= 0;
+            minus_prev <= 0;
+        end else begin
+            if(plus_rising)
+                select <= select + 1;
+            if(minus_rising)
+                select <= select - 1;
+
+            plus_prev <= bitmask[13];
+            minus_prev <= bitmask[14];
+        end
 	endmodule
 	
