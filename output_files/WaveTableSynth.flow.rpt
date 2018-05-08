@@ -1,5 +1,5 @@
 Flow report for WaveTableSynth
-Wed May 02 13:37:11 2018
+Tue May 08 17:05:00 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,14 +40,14 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed May 02 13:37:05 2018       ;
+; Flow Status                        ; Successful - Tue May 08 17:04:54 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; WaveTableSynth                              ;
 ; Top-level Entity Name              ; WaveTableSynth                              ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 355 / 114,480 ( < 1 % )                     ;
+; Total logic elements               ; 362 / 114,480 ( < 1 % )                     ;
 ;     Total combinational functions  ; 292 / 114,480 ( < 1 % )                     ;
 ;     Dedicated logic registers      ; 223 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 223                                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/02/2018 13:36:23 ;
+; Start date & time ; 05/08/2018 17:04:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; WaveTableSynth      ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 154880082596881.152528618203320        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 154880082295369.152581704511968        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; dpram_bb.v                             ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 673 MB              ; 00:00:24                           ;
-; Fitter                    ; 00:00:23     ; 1.0                     ; 1623 MB             ; 00:00:32                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 580 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 746 MB              ; 00:00:04                           ;
-; Total                     ; 00:00:46     ; --                      ; --                  ; 00:01:03                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 671 MB              ; 00:00:24                           ;
+; Fitter                    ; 00:00:24     ; 1.0                     ; 1625 MB             ; 00:00:30                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 579 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 745 MB              ; 00:00:04                           ;
+; Total                     ; 00:00:53     ; --                      ; --                  ; 00:01:01                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +106,10 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; E2192-14-0131    ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; E2192-14-0131    ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; E2192-14-0131    ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; E2192-14-0131    ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; E2192-11-0128    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; E2192-11-0128    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; E2192-11-0128    ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; E2192-11-0128    ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

@@ -62,7 +62,7 @@ module WaveTable(clk_50, ar, bclk, daclrck, waveSelect, keyOn, keyVal, dataOut, 
 	
 	//Iterate through the wave sample, incrementing by scale
 	//each Left Right Clock (48.8kHz) unless key isn't on.
-	always@(posedge counter[2] or negedge ar)
+	always@(posedge counter[0] or negedge ar)
 		if(~ar)
 			wavePosition = 13'b0;
 		else if(keyOn)

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/djbrandt/Desktop/WaveTableSynth/output_files/") File("WaveTableSynth.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("C:/Users/haroldvilander/Desktop/WaveTableSynth/output_files/") File("WaveTableSynth.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

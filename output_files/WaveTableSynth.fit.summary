@@ -1,11 +1,11 @@
-Fitter Status : Successful - Wed May 02 13:36:58 2018
+Fitter Status : Successful - Tue May 08 17:04:47 2018
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : WaveTableSynth
 Top-level Entity Name : WaveTableSynth
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 355 / 114,480 ( < 1 % )
+Total logic elements : 362 / 114,480 ( < 1 % )
     Total combinational functions : 292 / 114,480 ( < 1 % )
     Dedicated logic registers : 223 / 114,480 ( < 1 % )
 Total registers : 223
